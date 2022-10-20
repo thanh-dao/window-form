@@ -8,7 +8,7 @@ using std_Management.Models;
 
 namespace std_Management.Migrations
 {
-    [DbContext(typeof(Std_ManagermentContext))]
+    [DbContext(typeof(Std_ManagementContext))]
     partial class Std_ManagermentContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

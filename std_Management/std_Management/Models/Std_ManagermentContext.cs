@@ -8,13 +8,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace std_Management.Models
 {
-    public partial class Std_ManagermentContext : DbContext
+    public partial class Std_ManagementContext : DbContext
     {
-        public Std_ManagermentContext()
+        public Std_ManagementContext()
         {
         }
 
-        public Std_ManagermentContext(DbContextOptions<Std_ManagermentContext> options)
+        public Std_ManagementContext(DbContextOptions<Std_ManagementContext> options)
             : base(options)
         {
         }
@@ -35,7 +35,7 @@ namespace std_Management.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server =(local); database=Std_Managerment;uid=sa;pwd=12345;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer("server =(local); database=Std_Management;uid=sa;pwd=12345;TrustServerCertificate=True");
             }
         }
 

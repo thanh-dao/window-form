@@ -9,7 +9,7 @@ using std_Management.Models;
 
 namespace std_Management.Migrations
 {
-    [DbContext(typeof(Std_ManagermentContext))]
+    [DbContext(typeof(Std_ManagementContext))]
     [Migration("20221020112237_InitialDB")]
     partial class InitialDB
     {

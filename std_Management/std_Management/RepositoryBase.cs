@@ -10,11 +10,11 @@ namespace std_Management
 {
     public class RepositoryBase<T> where T : class
     {
-        private readonly Std_ManagermentContext _context;
+        private readonly Std_ManagementContext _context;
         private readonly DbSet<T> _dbSet;
         public RepositoryBase()
         {
-            _context = new Std_ManagermentContext();
+            _context = new Std_ManagementContext();
             _dbSet = _context.Set<T>();
         }
 
