@@ -18,7 +18,7 @@ namespace std_Management
             _dbSet = _context.Set<T>();
         }
 
-        public T Get(Guid id)
+        public T Get(String id)
         {
             return _dbSet.FirstOrDefault();
         }

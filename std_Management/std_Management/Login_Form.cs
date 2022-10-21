@@ -50,9 +50,9 @@ namespace Student_Management
                 && p.Password.Equals(_password)).FirstOrDefault();
                 if (_check != null) //ton tai user
                 {
-                    var NewForm = new MainForm();
-                    NewForm.ShowDialog();
-                    this.Hide();
+                    MainForm NewForm = new MainForm();
+                    NewForm.Hide();
+                    NewForm.Show();
                 }
                 else
                 {
