@@ -143,11 +143,11 @@ namespace Student_Management
                 bool Gender;
              if (rdo_female.Checked)
             {
-                Gender = true;
+                Gender = false;
             }
             else
             {
-                Gender = false;
+                Gender = true;
             }
             string Phone = txt_phone.Text;
                 string Email = txt_email.Text;
@@ -155,7 +155,7 @@ namespace Student_Management
                 String RoleId = role.Text;
                 String Picture = pictureBoxStudentImage.Text;
 
-                var CheckId = repo.GetAll().Where(p => p.UserId.Equals(UserId)).FirstOrDefault();
+                var CheckId = repo.GetAll().Where(p => p.UserId.Trim().Equals(UserId)).FirstOrDefault();
                 if (CheckId != null)
                 {
                     Console.WriteLine(repo.Get(txt_userid.Text));

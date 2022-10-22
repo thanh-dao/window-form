@@ -46,6 +46,7 @@
             this.dtg_studentList.RowTemplate.Height = 24;
             this.dtg_studentList.Size = new System.Drawing.Size(980, 580);
             this.dtg_studentList.TabIndex = 0;
+            this.dtg_studentList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtg_studentList_ColumnHeaderMouseClick);
             this.dtg_studentList.DoubleClick += new System.EventHandler(this.dtg_studentList_DoubleClick);
             // 
             // btn_refresh

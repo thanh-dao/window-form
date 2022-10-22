@@ -64,10 +64,8 @@ namespace Student_Management
                 (p => p.Username.Equals(_username)
                 && p.Password.Equals(_password)).FirstOrDefault();
                 if (_check != null) //ton tai user
-                {
-                    var repo2 = new RepositoryBase<User>();
-                    var user = repo2.GetAll().Where(p => p.UserId.Equals(_check.UserId)).FirstOrDefault();
-                    MainForm NewForm = new MainForm(user);
+                {                
+                    MainForm NewForm = new MainForm(_check);
                     NewForm.Show();
                 }
                 else

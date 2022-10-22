@@ -1,4 +1,6 @@
-﻿using std_Management.Models;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using std_Management;
+using std_Management.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,16 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using User = std_Management.Models.User;
 
 namespace Student_Management
 {
     public partial class MainForm : Form
     {
-        User user;
-        public MainForm(User user)
+        public Account acc;
+        public MainForm(Account acc)
         {
             InitializeComponent();
-            this.user = user;
+            this.acc = acc;
         }
 
         private void addNewStudentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,6 +38,8 @@ namespace Student_Management
         private void updateStudentInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateRemoveStudent_Form updateRemoveStdF = new UpdateRemoveStudent_Form();
+            var repo = new RepositoryBase<User>();
+            var user = repo.GetAll().Where(i => i.UserId == acc.UserId).FirstOrDefault();
 
             updateRemoveStdF.txt_userid.Text = user.UserId;
             updateRemoveStdF.txt_firstname.Text = user.FirstName;
@@ -43,22 +48,17 @@ namespace Student_Management
 
             if (user.Gender == true)
             {
-                updateRemoveStdF.rdo_male.Checked = true;
+                updateRemoveStdF.rdo_female.Checked = true;
             }
             if (user.Gender == false)
             {
-                updateRemoveStdF.rdo_female.Checked = true;
+                updateRemoveStdF.rdo_male.Checked = true;
             }
             updateRemoveStdF.txt_phone.Text = user.Phone;
             updateRemoveStdF.txt_email.Text = user.Email;
             updateRemoveStdF.txt_address.Text = user.Address;
             updateRemoveStdF.btn_deleteUser.Enabled = false;
             updateRemoveStdF.Show(this);
-        }
-
-        private void StudentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void staticToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +77,11 @@ namespace Student_Management
         {
             AddDeleteStdInClassForm addDeleteStdInClassF = new AddDeleteStdInClassForm();
             addDeleteStdInClassF.Show(this);
+        }
+
+        private void StudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

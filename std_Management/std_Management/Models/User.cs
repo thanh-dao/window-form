@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 #nullable disable
 
@@ -19,7 +20,7 @@ namespace std_Management.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
-        public bool Gender { get; set; }
+        public bool? Gender { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
@@ -30,7 +31,7 @@ namespace std_Management.Models
 
         public virtual Major Major { get; set; }
         public virtual Role Role { get; set; }
-        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection <Account> Accounts { get; set; }
         public virtual ICollection<ClassStudent> ClassStudents { get; set; }
         public virtual ICollection<Mark> Marks { get; set; }
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }

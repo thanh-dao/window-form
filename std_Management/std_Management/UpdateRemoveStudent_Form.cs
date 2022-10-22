@@ -18,11 +18,11 @@ namespace Student_Management
 {
     public partial class UpdateRemoveStudent_Form : Form
     {
+
         public UpdateRemoveStudent_Form()
         {
             InitializeComponent();
         }
-
 
         public bool checkObject()
         {
@@ -146,6 +146,8 @@ namespace Student_Management
 
 
                 repo.Update(CheckId);
+
+                
                 MessageBox.Show("Update user successfully.", "Notification", MessageBoxButtons.OK);
             }
 

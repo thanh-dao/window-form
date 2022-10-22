@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace Student_Management
 {
@@ -19,7 +20,21 @@ namespace Student_Management
         {
             InitializeComponent();
             var repo = new RepositoryBase<User>();
-            var studentList = repo.GetAll().ToList();
+            var roles = new RepositoryBase<Role>().GetAll().ToList();
+            var studentList = repo.GetAll().Select(i => new
+            {
+                i.UserId,
+                i.FirstName,
+                i.LastName,
+                i.BirthDate,
+                Gender = !i.Gender.Value ? "Male" : "Female",
+                i.Phone,
+                i.Email,
+                i.Address,
+                i.Picture,
+                Status = i.Status.Value ? "Active" : "Suspend",
+                Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
+            }).OrderBy(i => i.Role).ToList();
             dtg_studentList.DataSource = studentList;
         }
 
@@ -32,11 +47,11 @@ namespace Student_Management
             updateRemoveStdF.txt_lastname.Text = dtg_studentList.CurrentRow.Cells[2].Value.ToString();
             updateRemoveStdF.dtp_birthdate.Value = (DateTime)dtg_studentList.CurrentRow.Cells[3].Value;
 
-            if (dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "False")
+            if (dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "Male")
             {
                 updateRemoveStdF.rdo_male.Checked = true;
             }
-            if (dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "True")
+            if (dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "Female")
             {
                 updateRemoveStdF.rdo_female.Checked = true;
             }
@@ -60,16 +75,50 @@ namespace Student_Management
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             var repo = new RepositoryBase<User>();
-            var studentList = repo.GetAll().ToList();
+            var roles = new RepositoryBase<Role>().GetAll().ToList();
+            var studentList = repo.GetAll().Select(i => new
+            {
+                i.UserId,
+                i.FirstName,
+                i.LastName,
+                i.BirthDate,
+                Gender = !i.Gender.Value ? "Male" : "Female",
+                i.Phone,
+                i.Email,
+                i.Address,
+                i.Picture,
+                Status = i.Status.Value ? "Active" : "Suspend",
+                Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
+            }).OrderBy(i => i.Role).ToList();    //.Select(p=>p.).ToList();
             dtg_studentList.DataSource = studentList;
             txt_userId.Text = "";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
             var repo = new RepositoryBase<User>();
-            var studentList = repo.GetAll().ToList().Where(p => p.UserId.ToLower().Contains(txt_userId.Text.ToLower())).ToList();
+            var roles = new RepositoryBase<Role>().GetAll().ToList();
+            var studentList = repo.GetAll().Select(i => new
+            {
+                i.UserId,
+                i.FirstName,
+                i.LastName,
+                i.BirthDate,
+                Gender = !i.Gender.Value ? "Male" : "Female",
+                i.Phone,
+                i.Email,
+                i.Address,
+                i.Picture,
+                Status = i.Status.Value ? "Active" : "Suspend",
+                Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
+            }).OrderBy(i => i.Role).ToList().Where(p => p.UserId.ToLower().Contains(txt_userId.Text.ToLower())).ToList();
             dtg_studentList.DataSource = studentList;
+        }
+
+        private void dtg_studentList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+          
         }
     }
 }

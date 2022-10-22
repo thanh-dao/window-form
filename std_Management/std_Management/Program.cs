@@ -15,6 +15,7 @@ namespace std_Management
         [STAThread]
         static void Main()
         {
+            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
