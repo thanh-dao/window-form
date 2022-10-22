@@ -1,4 +1,6 @@
-﻿using System;
+﻿using std_Management;
+using std_Management.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,36 +18,58 @@ namespace Student_Management
         public StudentList_Form()
         {
             InitializeComponent();
+            var repo = new RepositoryBase<User>();
+            var studentList = repo.GetAll().ToList();
+            dtg_studentList.DataSource = studentList;
         }
 
         private void dtg_studentList_DoubleClick(object sender, EventArgs e)
         {
             //Display the selected student in the new form to edit/remove
             UpdateRemoveStudent_Form updateRemoveStdF = new UpdateRemoveStudent_Form();
-            updateRemoveStdF.txt_studentid.Text = dtg_studentList.CurrentRow.Cells[0].Value.ToString();
+            updateRemoveStdF.txt_userid.Text = dtg_studentList.CurrentRow.Cells[0].Value.ToString();
             updateRemoveStdF.txt_firstname.Text = dtg_studentList.CurrentRow.Cells[1].Value.ToString();
             updateRemoveStdF.txt_lastname.Text = dtg_studentList.CurrentRow.Cells[2].Value.ToString();
             updateRemoveStdF.dtp_birthdate.Value = (DateTime)dtg_studentList.CurrentRow.Cells[3].Value;
 
-            if(dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "0")
+            if (dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "False")
             {
                 updateRemoveStdF.rdo_male.Checked = true;
             }
-
+            if (dtg_studentList.CurrentRow.Cells[4].Value.ToString() == "True")
+            {
+                updateRemoveStdF.rdo_female.Checked = true;
+            }
             updateRemoveStdF.txt_phone.Text = dtg_studentList.CurrentRow.Cells[5].Value.ToString();
             updateRemoveStdF.txt_email.Text = dtg_studentList.CurrentRow.Cells[6].Value.ToString();
             updateRemoveStdF.txt_address.Text = dtg_studentList.CurrentRow.Cells[7].Value.ToString();
 
-            byte[] pic;
-            pic = (byte[])dtg_studentList.CurrentRow.Cells[7].Value;
-            MemoryStream picture = new MemoryStream(pic);
-            updateRemoveStdF.pictureBoxStudentImage.Image = Image.FromStream(picture);
+            var repo = new RepositoryBase<User>();
+            var account = repo.GetAll().Where(p => p.RoleId.Equals("AD") && p.UserId.Equals(dtg_studentList.CurrentRow.Cells[0].Value.ToString())).FirstOrDefault();
+
+            if (account != null)
+            {
+                updateRemoveStdF.btn_deleteUser.Enabled = false;
+            }
+
+
+            this.Close();
             updateRemoveStdF.Show();
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            //refresh the datagridview data
+            var repo = new RepositoryBase<User>();
+            var studentList = repo.GetAll().ToList();
+            dtg_studentList.DataSource = studentList;
+            txt_userId.Text = "";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var repo = new RepositoryBase<User>();
+            var studentList = repo.GetAll().ToList().Where(p => p.UserId.ToLower().Contains(txt_userId.Text.ToLower())).ToList();
+            dtg_studentList.DataSource = studentList;
         }
     }
 }

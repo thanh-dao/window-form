@@ -34,6 +34,12 @@ namespace std_Management
             _context.SaveChanges();
         }
 
+        public void Delete(T entity)
+        {
+            _dbSet.Remove(entity);
+            _context.SaveChanges();
+        }
+
         public void Update(T entity)
         {
             var tracker = _context.Attach(entity);

@@ -37,32 +37,11 @@ namespace Student_Management
             }
             return true;
         }
-        void login()
-        {
-            if (checkObject())
-            {
-                var _username = txt_username.Text;
-                var _password = txt_password.Text;
-
-                var repo = new RepositoryBase<Account>();
-                var _check = repo.GetAll().Where
-                (p => p.Username.Equals(_username) 
-                && p.Password.Equals(_password)).FirstOrDefault();
-                if (_check != null) //ton tai user
-                {
-                    MainForm NewForm = new MainForm();
-                    NewForm.Hide();
-                    NewForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("User does not exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
 
 
 
-        }
+
+ 
 
         void exit()
         {
@@ -74,7 +53,28 @@ namespace Student_Management
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            login();
+
+            if (checkObject())
+            {
+                var _username = txt_username.Text;
+                var _password = txt_password.Text;
+
+                var repo = new RepositoryBase<Account>();
+                var _check = repo.GetAll().Where
+                (p => p.Username.Equals(_username)
+                && p.Password.Equals(_password)).FirstOrDefault();
+                if (_check != null) //ton tai user
+                {
+                    var repo2 = new RepositoryBase<User>();
+                    var user = repo2.GetAll().Where(p => p.UserId.Equals(_check.UserId)).FirstOrDefault();
+                    MainForm NewForm = new MainForm(user);
+                    NewForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("User does not exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

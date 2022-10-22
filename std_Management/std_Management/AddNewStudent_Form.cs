@@ -4,11 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Identity.Client;
+using Microsoft.VisualBasic.ApplicationServices;
 using std_Management;
 using std_Management.Models;
+using User = std_Management.Models.User;
 
 namespace Student_Management
 {
@@ -17,6 +21,22 @@ namespace Student_Management
         public AddNewStudent_Form()
         {
             InitializeComponent();
+        }
+
+
+        private void ResetForm()
+        {
+            txt_userid.Text = "" ;
+            txt_firstname.Text = "";
+            txt_lastname.Text = "";
+            rdo_male.Checked = false;
+            rdo_female.Checked = false ;
+            dtp_birthdate.Value = DateTime.Now;
+            txt_phone.Text = "";
+            txt_email.Text = "";
+            txt_address.Text = "";
+            pictureBoxStudentImage.Text = "";
+            role.Text = "";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -44,14 +64,6 @@ namespace Student_Management
             if (String.IsNullOrWhiteSpace(txt_userid.Text))
             {
                 MessageBox.Show("Please input your user student Id", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_userid.Focus();
-                return false;
-            }
-
-            if((repo.Get(txt_userid.Text)) != null)
-            {
-                Console.WriteLine(repo.Get(txt_userid.Text));
-                MessageBox.Show("Id already exits", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_userid.Focus();
                 return false;
             }
@@ -98,55 +110,80 @@ namespace Student_Management
                 txt_address.Focus();
                 return false;
             }
-            
-            return true;
+
+            if (String.IsNullOrWhiteSpace(role.Text))
+            {
+                MessageBox.Show("Please choice your role", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_address.Focus();
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }         
         }
 
-        Boolean addStudent()
+
+
+        private void btn_addStudent_Click(object sender, EventArgs e)
         {
 
-            if (checkObject())
+            if (!checkObject())
             {
-                string UserId  = txt_userid.Text;
+                return;
+            }
+            
+                var repo = new RepositoryBase<User>();
+
+                string UserId = txt_userid.Text;
                 string FirstName = txt_firstname.Text;
                 string LastName = txt_lastname.Text;
                 DateTime BirthDate = dtp_birthdate.Value;
                 bool Gender;
-                if (rdo_female.Text.Equals("Female"))
-                {
-                     Gender = true;
-                }
-                else
-                {
-                     Gender = false;
-                }
-                string Phone = txt_phone.Text;
+             if (rdo_female.Checked)
+            {
+                Gender = true;
+            }
+            else
+            {
+                Gender = false;
+            }
+            string Phone = txt_phone.Text;
                 string Email = txt_email.Text;
                 string Address = txt_address.Text;
+                String RoleId = role.Text;
                 String Picture = pictureBoxStudentImage.Text;
 
+                var CheckId = repo.GetAll().Where(p => p.UserId.Equals(UserId)).FirstOrDefault();
+                if (CheckId != null)
+                {
+                    Console.WriteLine(repo.Get(txt_userid.Text));
+                    MessageBox.Show("Id " + txt_userid.Text + " already exits", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_userid.Focus();
+                    return;
+                }
 
-
-        User user = new User () 
-        {UserId = UserId, FirstName = FirstName, LastName = LastName, BirthDate = BirthDate, 
-            Gender = Gender, Phone = Phone, Email= Email, Address = Address, Picture = Picture, RoleId = "ST"};
-                var repo = new RepositoryBase<User>();
-                repo.Create(user);
-                return true;
-            }
-                
-            return false;
-        }
-
-        private void btn_addStudent_Click(object sender, EventArgs e)
-        {
-            if (addStudent())
+            User user = new User()
             {
-                MessageBox.Show("Add successfully", "notification", MessageBoxButtons.OK);
-            }
+                UserId = UserId,
+                FirstName = FirstName,
+                LastName = LastName,
+                BirthDate = BirthDate,
+                Gender = Gender,
+                Phone = Phone,
+                Email = Email,
+                Address = Address,
+                Picture = Picture,
+                RoleId = RoleId
+                };
+
+                repo.Create(user);
+                ResetForm();
+                MessageBox.Show("Add user successfully.", "Notification", MessageBoxButtons.OK);
         }
 
-        private void btn_cancelAddStudent_Click(object sender, EventArgs e)
+            private void btn_cancelAddStudent_Click(object sender, EventArgs e)
         {
             Close();
         }
