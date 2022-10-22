@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace std_Management.Models
 {
+
     public partial class Account
     {
         public string AccountId { get; set; }

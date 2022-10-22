@@ -16,6 +16,8 @@ namespace Student_Management
 {
     public partial class StudentList_Form : Form
     {
+        String _prevColName = "";
+        bool _isAsc = true;
         public StudentList_Form()
         {
             InitializeComponent();
@@ -118,7 +120,41 @@ namespace Student_Management
 
         private void dtg_studentList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-          
+            var name = dtg_studentList.Columns[e.ColumnIndex].Name;
+            MessageBox.Show("User does not exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (_prevColName.Equals(name))
+            {
+                _isAsc = !_isAsc;
+            }else
+            {
+                _isAsc = true;
+                _prevColName = name;
+            }
+            var repo = new RepositoryBase<User>();
+            List<Role> _roles = new RepositoryBase<Role>().GetAll().ToList();
+            var studentList = repo.GetAll().Select(i => new
+            {
+                i.UserId,
+                i.FirstName,
+                i.LastName,
+                i.BirthDate,
+                Gender = !i.Gender.Value ? "Male" : "Female",
+                i.Phone,
+                i.Email,
+                i.Address,
+                i.Picture,
+                Status = i.Status.Value ? "Active" : "Suspend",
+                Role = _roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
+            });
+            if (_isAsc)
+            {
+                dtg_studentList.DataSource = studentList.OrderBy(i => i.GetType().GetProperty(name)).ToList();
+            }
+            else
+            {
+                dtg_studentList.DataSource = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+            }
+
         }
     }
 }
