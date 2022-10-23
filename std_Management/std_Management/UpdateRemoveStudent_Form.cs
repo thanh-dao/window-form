@@ -131,7 +131,7 @@ namespace Student_Management
             string _Address = txt_address.Text;
             String _Picture = pictureBoxStudentImage.Text;
 
-            var CheckId = repo.GetAll().Where(p => p.UserId.Equals(_UserId)).FirstOrDefault();
+            var CheckId = repo.GetAll().Where(p => p.UserId.Trim().Equals(_UserId.Trim())).FirstOrDefault();
             if (CheckId != null)
             {
                 CheckId.UserId = _UserId;
@@ -159,7 +159,7 @@ namespace Student_Management
             btn_deleteUser.Enabled = false;
             var _UserId = txt_userid.Text;
             var repo = new RepositoryBase<User>();
-            var obj = repo.GetAll().Where(p => p.UserId.Equals(_UserId)).FirstOrDefault();
+            var obj = repo.GetAll().Where(p => p.UserId.Trim().Equals(_UserId.Trim())).FirstOrDefault();
             if (obj != null)
             {
                 DialogResult dialogResult = MessageBox.Show("Do you want to Delete ", "Delete Item", MessageBoxButtons.YesNo);

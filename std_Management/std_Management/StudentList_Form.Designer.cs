@@ -53,33 +53,35 @@
             // 
             this.btn_refresh.BackColor = System.Drawing.Color.Teal;
             this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_refresh.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_refresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_refresh.Location = new System.Drawing.Point(12, 680);
             this.btn_refresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(231, 60);
             this.btn_refresh.TabIndex = 1;
-            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.Text = "REFRESH";
             this.btn_refresh.UseVisualStyleBackColor = false;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // txt_userId
             // 
+            this.txt_userId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_userId.Location = new System.Drawing.Point(839, 22);
             this.txt_userId.Name = "txt_userId";
-            this.txt_userId.Size = new System.Drawing.Size(142, 27);
+            this.txt_userId.Size = new System.Drawing.Size(142, 34);
             this.txt_userId.TabIndex = 2;
             this.txt_userId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(743, 29);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(686, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(131, 28);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Search by id";
+            this.label1.Text = "Search by ID:";
             // 
             // StudentList_Form
             // 

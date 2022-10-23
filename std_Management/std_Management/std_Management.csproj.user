@@ -4,10 +4,25 @@
     <Compile Update="AddDeleteStdInClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AddNewClass_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddNewStudent_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ChangeTeacherForm.cs">
+    <Compile Update="AddSubject_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ClassList_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ClassUpdateMark_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DefineClass_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MarkManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login_Form.cs">
@@ -22,7 +37,13 @@
     <Compile Update="StudentList_Form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SubjectList_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UpdateRemoveStudent_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UpdateRemoveSubject_Form.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Student_Management
+namespace std_Management
 {
-    public partial class ChangeTeacherForm : Form
+    public partial class AddNewClass_Form : Form
     {
-        public ChangeTeacherForm()
+        public AddNewClass_Form()
         {
             InitializeComponent();
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
+        private void btn_updateUser_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

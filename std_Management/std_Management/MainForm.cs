@@ -69,8 +69,6 @@ namespace Student_Management
 
         private void lECTUREToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangeTeacherForm changeTeacherF = new ChangeTeacherForm();
-            changeTeacherF.Show(this);
         }
 
         private void sTUDENTLISTToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +80,23 @@ namespace Student_Management
         private void StudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mAJOR1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sUBJECTSLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           subjectList_Form subjectList_Form = new subjectList_Form();
+            subjectList_Form.Show(this);
+        }
+
+        private void aDDSUBJECTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddSubject_Form AddSubject_Form = new AddSubject_Form();
+            AddSubject_Form.Show(this);
         }
     }
 }
