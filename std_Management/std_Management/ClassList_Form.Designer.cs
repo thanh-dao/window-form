@@ -80,6 +80,7 @@
             this.dtgClassList.RowTemplate.Height = 24;
             this.dtgClassList.Size = new System.Drawing.Size(980, 580);
             this.dtgClassList.TabIndex = 4;
+            this.dtgClassList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgClassList_CellContentClick);
             this.dtgClassList.DoubleClick += new System.EventHandler(this.dtgClassList_DoubleClick);
             // 
             // ClassList_Form

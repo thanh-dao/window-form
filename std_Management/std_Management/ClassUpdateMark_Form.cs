@@ -42,34 +42,40 @@ namespace std_Management
             var classId = dtgClassUpdateMark.CurrentRow.Cells[0].Value.ToString();
 
             var roles = new RepositoryBase<Role>().GetAll().ToList();
-            var repo = new RepositoryBase<User>();
+            var studentRepo = new RepositoryBase<User>();
 
-            /* var studentList = repo.GetAll().Select(i => new
-             {
-                 i.UserId,
-                 i.FirstName,
-                 i.LastName,
-                 i.BirthDate,
-                 Gender = !i.Gender.Value ? "Male" : "Female",
-                 i.Phone,
-                 i.Email,
-                 i.Address,
-                 i.Picture,
-                 Status = i.Status.Value ? "Active" : "Suspend",
-                 Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
-             }).Where(p=> p.Role.Equals("Student")).OrderBy(i => i.Role).ToList();*/
+            var studentList = studentRepo.GetAll().Select(i => new
+            {
+                i.UserId,
+                i.FirstName,
+                i.LastName,
+                i.BirthDate,
+                Gender = !i.Gender.Value ? "Male" : "Female",
+                i.Phone,
+                i.Email,
+                i.Address,
+                i.Picture,
+                Status = i.Status.Value ? "Active" : "Suspend",
+                Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
+            }).Where(p => p.Role.Equals("Student")).OrderBy(i => i.Role).ToList();
 
 
-           /* var CS = new RepositoryBase<Class>();
-            CS.GetAll().Where(p => p.ClassStudents).ToList();
-
+            var classRepo = new RepositoryBase<Class>();
+            var classes = classRepo.GetAll().Where(p => p.ClassStudents.Equals(classId)).ToList();
+            List<User> list = new List<User>();
+            var classStudentRepo = new RepositoryBase<ClassStudent>();
+            classes.ForEach(item =>
+            {
+                classStudentRepo.GetAll().Where(p => p.ClassId.Equals(classId)).ToList().ForEach(i => list.Add(i.Student));
+            });
 
 
 
             MarkManagement.dtgMarkManagement.DataSource = studentList;
             MarkManagement.dtgMarkManagement.DataSource = roles;
+            MarkManagement.dtgMarkManagement.DataSource = list;
             MarkManagement.txtAccountId.Text = classId;
-            MarkManagement.Show();*/
+            MarkManagement.Show();
         }
     }
 }
