@@ -28,6 +28,7 @@ namespace std_Management
             return _dbSet.ToList();
         }
 
+
         public void Create(T entity)
         {
             _dbSet.Add(entity);
