@@ -89,8 +89,9 @@
             this.subjectListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.subjectListToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.subjectListToolStripMenuItem.Name = "subjectListToolStripMenuItem";
-            this.subjectListToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.subjectListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.subjectListToolStripMenuItem.Text = "Subject List";
+            this.subjectListToolStripMenuItem.Click += new System.EventHandler(this.subjectListToolStripMenuItem_Click);
             // 
             // cLASSToolStripMenuItem
             // 
@@ -109,8 +110,9 @@
             this.classListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.classListToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.classListToolStripMenuItem.Name = "classListToolStripMenuItem";
-            this.classListToolStripMenuItem.Size = new System.Drawing.Size(182, 32);
+            this.classListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.classListToolStripMenuItem.Text = "Class List";
+            this.classListToolStripMenuItem.Click += new System.EventHandler(this.classListToolStripMenuItem_Click);
             // 
             // TeacherMain_Form
             // 

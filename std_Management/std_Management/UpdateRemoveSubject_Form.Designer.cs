@@ -42,18 +42,19 @@
             // nudNumOfCredits
             // 
             this.nudNumOfCredits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nudNumOfCredits.Location = new System.Drawing.Point(251, 191);
+            this.nudNumOfCredits.Location = new System.Drawing.Point(220, 143);
+            this.nudNumOfCredits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudNumOfCredits.Name = "nudNumOfCredits";
-            this.nudNumOfCredits.Size = new System.Drawing.Size(241, 34);
+            this.nudNumOfCredits.Size = new System.Drawing.Size(288, 29);
             this.nudNumOfCredits.TabIndex = 64;
             // 
             // lbNumOfCredits
             // 
             this.lbNumOfCredits.AutoSize = true;
             this.lbNumOfCredits.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbNumOfCredits.Location = new System.Drawing.Point(30, 190);
+            this.lbNumOfCredits.Location = new System.Drawing.Point(26, 142);
             this.lbNumOfCredits.Name = "lbNumOfCredits";
-            this.lbNumOfCredits.Size = new System.Drawing.Size(189, 28);
+            this.lbNumOfCredits.Size = new System.Drawing.Size(152, 21);
             this.lbNumOfCredits.TabIndex = 63;
             this.lbNumOfCredits.Text = "Number Of Credits:";
             // 
@@ -61,9 +62,9 @@
             // 
             this.lbSubjectName.AutoSize = true;
             this.lbSubjectName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbSubjectName.Location = new System.Drawing.Point(75, 111);
+            this.lbSubjectName.Location = new System.Drawing.Point(66, 83);
             this.lbSubjectName.Name = "lbSubjectName";
-            this.lbSubjectName.Size = new System.Drawing.Size(144, 28);
+            this.lbSubjectName.Size = new System.Drawing.Size(116, 21);
             this.lbSubjectName.TabIndex = 62;
             this.lbSubjectName.Text = "Subject Name:";
             // 
@@ -72,10 +73,9 @@
             this.btnRemoveSubject.BackColor = System.Drawing.Color.DarkRed;
             this.btnRemoveSubject.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnRemoveSubject.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSubject.Location = new System.Drawing.Point(335, 295);
-            this.btnRemoveSubject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemoveSubject.Location = new System.Drawing.Point(308, 215);
             this.btnRemoveSubject.Name = "btnRemoveSubject";
-            this.btnRemoveSubject.Size = new System.Drawing.Size(157, 78);
+            this.btnRemoveSubject.Size = new System.Drawing.Size(137, 58);
             this.btnRemoveSubject.TabIndex = 61;
             this.btnRemoveSubject.Text = "Remove";
             this.btnRemoveSubject.UseVisualStyleBackColor = false;
@@ -86,10 +86,9 @@
             this.btnUpdateSubject.BackColor = System.Drawing.Color.DarkGreen;
             this.btnUpdateSubject.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateSubject.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateSubject.Location = new System.Drawing.Point(109, 295);
-            this.btnUpdateSubject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateSubject.Location = new System.Drawing.Point(110, 215);
             this.btnUpdateSubject.Name = "btnUpdateSubject";
-            this.btnUpdateSubject.Size = new System.Drawing.Size(157, 78);
+            this.btnUpdateSubject.Size = new System.Drawing.Size(137, 58);
             this.btnUpdateSubject.TabIndex = 60;
             this.btnUpdateSubject.Text = "Update";
             this.btnUpdateSubject.UseVisualStyleBackColor = false;
@@ -98,34 +97,36 @@
             // txtSubjectName
             // 
             this.txtSubjectName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSubjectName.Location = new System.Drawing.Point(251, 111);
+            this.txtSubjectName.Location = new System.Drawing.Point(220, 83);
+            this.txtSubjectName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSubjectName.Name = "txtSubjectName";
-            this.txtSubjectName.Size = new System.Drawing.Size(241, 34);
+            this.txtSubjectName.Size = new System.Drawing.Size(288, 29);
             this.txtSubjectName.TabIndex = 59;
             // 
             // txtSubjectID
             // 
             this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSubjectID.Location = new System.Drawing.Point(251, 43);
+            this.txtSubjectID.Location = new System.Drawing.Point(220, 32);
+            this.txtSubjectID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSubjectID.Name = "txtSubjectID";
-            this.txtSubjectID.Size = new System.Drawing.Size(241, 34);
+            this.txtSubjectID.Size = new System.Drawing.Size(288, 29);
             this.txtSubjectID.TabIndex = 58;
             // 
             // lbSubjectID
             // 
             this.lbSubjectID.AutoSize = true;
             this.lbSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbSubjectID.Location = new System.Drawing.Point(109, 43);
+            this.lbSubjectID.Location = new System.Drawing.Point(95, 32);
             this.lbSubjectID.Name = "lbSubjectID";
-            this.lbSubjectID.Size = new System.Drawing.Size(110, 28);
+            this.lbSubjectID.Size = new System.Drawing.Size(89, 21);
             this.lbSubjectID.TabIndex = 57;
             this.lbSubjectID.Text = "Subject ID:";
             // 
             // UpdateRemoveSubject_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 450);
+            this.ClientSize = new System.Drawing.Size(594, 338);
             this.Controls.Add(this.nudNumOfCredits);
             this.Controls.Add(this.lbNumOfCredits);
             this.Controls.Add(this.lbSubjectName);
@@ -134,6 +135,7 @@
             this.Controls.Add(this.txtSubjectName);
             this.Controls.Add(this.txtSubjectID);
             this.Controls.Add(this.lbSubjectID);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UpdateRemoveSubject_Form";
             this.Text = "UpdateRemoveSubject_Form";
             ((System.ComponentModel.ISupportInitialize)(this.nudNumOfCredits)).EndInit();

@@ -47,5 +47,72 @@ namespace std_Management
             TeacherForm.txt_address.Text = user.Address;
             TeacherForm.Show();
         }
+
+        private void subjectListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var repo = new RepositoryBase<User>();
+            var user = repo.GetAll().Where(i => i.UserId == acc.UserId).FirstOrDefault();
+
+            TeacherListSubject_Form teacherListSubject = new TeacherListSubject_Form(user);
+
+            teacherListSubject.txtTeacherId.Text = user.UserId;
+            teacherListSubject.txtTeacherId.Enabled = false;
+            teacherListSubject.txtFirstName.Text = user.FirstName;
+            teacherListSubject.txtFirstName.Enabled = false;
+            teacherListSubject.txtLastName.Text = user.LastName;
+            teacherListSubject.txtLastName.Enabled = false;
+
+            var repoSubjectTeacher = new RepositoryBase<SubjectTeacher>();
+            var subjectList = repoSubjectTeacher.GetAll().Where(p => p.TeacherId.Equals(user.UserId)).Select(p => new { p.TeacherId, p.SubjectId }).ToList();
+
+            teacherListSubject.dtgSujectList.DataSource = subjectList;
+
+
+            teacherListSubject.Show();
+        }
+
+
+        private void classListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var repo = new RepositoryBase<User>();
+            var user = repo.GetAll().Where(i => i.UserId == acc.UserId).FirstOrDefault();
+
+            TeacherListClass_Form TeacherListClass = new TeacherListClass_Form(user);
+
+            TeacherListClass.txtTeacherId.Text = user.UserId;
+            TeacherListClass.txtTeacherId.Enabled = false;
+            TeacherListClass.txtFirstName.Text = user.FirstName;
+            TeacherListClass.txtFirstName.Enabled = false;
+            TeacherListClass.txtLastName.Text = user.LastName;
+            TeacherListClass.txtLastName.Enabled = false;
+
+
+            var repoSubjectTeacher = new RepositoryBase<SubjectTeacher>().GetAll().Where(p => p.TeacherId.Equals(user.UserId)).ToList();
+            var repoClassSubject = new RepositoryBase<ClassSubject>().GetAll().ToList();
+
+            var subjects = new List<ClassSubject>();
+
+            foreach (var SubjectTeacher in repoSubjectTeacher)
+            {
+                foreach (var classSubject in repoClassSubject)
+                {
+                    if (classSubject.SubjectTeacherId.Equals(SubjectTeacher.SubjectTeacherId))
+                    {
+                        subjects.Add(classSubject);
+                    }
+                }
+            }
+
+            var subjectClass = subjects.Select(i => new
+            {
+                i.ClassId,
+                i.SubjectTeacherId,
+
+            }).ToList();
+
+            TeacherListClass.dtgSujectList.DataSource = subjectClass;
+
+            TeacherListClass.Show();
+        }
     }
 }
