@@ -120,15 +120,15 @@ namespace Student_Management
 
         private void dtg_studentList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var name = dtg_studentList.Columns[e.ColumnIndex].Name;
+            var colName = dtg_studentList.Columns[e.ColumnIndex].Name;
             MessageBox.Show("User does not exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (_prevColName.Equals(name))
+            if (_prevColName.Equals(colName))
             {
                 _isAsc = !_isAsc;
             }else
             {
                 _isAsc = true;
-                _prevColName = name;
+                _prevColName = colName;
             }
             var repo = new RepositoryBase<User>();
             List<Role> _roles = new RepositoryBase<Role>().GetAll().ToList();
@@ -146,15 +146,282 @@ namespace Student_Management
                 Status = i.Status.Value ? "Active" : "Suspend",
                 Role = _roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
             });
-            if (_isAsc)
-            {
-                dtg_studentList.DataSource = studentList.OrderBy(i => i.GetType().GetProperty(name)).ToList();
-            }
-            else
-            {
-                dtg_studentList.DataSource = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
-            }
+            var sortedStudentList = studentList.ToList();
 
+            switch (colName)
+            {
+                case "UserId":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.UserId).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.UserId).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "FirstName":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.FirstName).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.FirstName).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "LastName":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.LastName).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.LastName).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "BirthDate":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.BirthDate).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.BirthDate).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Gender":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Gender).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Gender).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Phone":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Phone).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Phone).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Email":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Email).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Email).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Address":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Address).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Address).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Status":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Status).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Status).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Role":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Role).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Role).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+            }
+            Console.WriteLine(sortedStudentList);
+            dtg_studentList.DataSource = sortedStudentList;
+        }
+
+        private List<dynamic> getSortedList(String colName, List<dynamic> studentList)
+        {
+            List<dynamic> sortedStudentList = null;
+            switch (colName)
+            {
+                case "UserId":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.UserId).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.UserId).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "FirstName":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.FirstName).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.FirstName).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "LastName":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.LastName).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.LastName).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "BirthDate":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.BirthDate).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.BirthDate).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Gender":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Gender).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Gender).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Phone":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Phone).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Phone).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Email":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Email).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Email).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Address":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Address).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Address).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Status":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Status).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Status).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+                case "Role":
+                    {
+                        if (_isAsc)
+                        {
+                            sortedStudentList = studentList.OrderBy(i => i.Role).ToList();
+                        }
+                        else
+                        {
+                            sortedStudentList = studentList.OrderByDescending(i => i.Role).ToList();
+                            //sortedStudentList = studentList.OrderByDescending(i => i.GetType().GetProperty(name)).ToList();
+                        }
+                        break;
+                    }
+            }
+            return sortedStudentList;
         }
     }
 }

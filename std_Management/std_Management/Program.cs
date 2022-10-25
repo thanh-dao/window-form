@@ -19,7 +19,7 @@ namespace std_Management
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClassUpdateMark_Form());
+            Application.Run(new StudentList_Form());
         }
     }
 }

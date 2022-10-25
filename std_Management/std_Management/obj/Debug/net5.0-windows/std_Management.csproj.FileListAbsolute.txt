@@ -240,3 +240,7 @@ C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.
 C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.pdb
 C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.genruntimeconfig.cache
 C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\ref\std_Management.dll
+C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.StudentMain_Form.resources
+C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.StudentProfile_Form.resources
+C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.TeacherMain_Form.resources
+C:\Users\Admin\Desktop\Project PRN\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.TeacherProfile_Form.resources
