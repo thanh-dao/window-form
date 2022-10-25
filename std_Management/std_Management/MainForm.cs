@@ -46,6 +46,7 @@ namespace Student_Management
             var user = repo.GetAll().Where(i => i.UserId == acc.UserId).FirstOrDefault();
 
             updateRemoveStdF.txt_userid.Text = user.UserId;
+            updateRemoveStdF.txt_userid.Enabled = false;
             updateRemoveStdF.txt_firstname.Text = user.FirstName;
             updateRemoveStdF.txt_lastname.Text = user.LastName;
             updateRemoveStdF.dtp_birthdate.Value = user.BirthDate;
@@ -65,21 +66,6 @@ namespace Student_Management
             updateRemoveStdF.Show(this);
         }
 
-        private void staticToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Static_Form staticF = new Static_Form();
-            staticF.Show(this);
-        }
-
-        private void lECTUREToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void sTUDENTLISTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddDeleteStdInClassForm addDeleteStdInClassF = new AddDeleteStdInClassForm();
-            addDeleteStdInClassF.Show(this);
-        }
 
         private void StudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,12 +82,6 @@ namespace Student_Management
         {
             AddSubject_Form AddSubject_Form = new AddSubject_Form();
             AddSubject_Form.Show(this);
-        }
-
-        private void uPDATEREMOVESUBJECTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UpdateRemoveSubject_Form UpdateRemoveSubject = new UpdateRemoveSubject_Form();
-            UpdateRemoveSubject.Show(this);
         }
 
         private void classListToolStripMenuItem_Click(object sender, EventArgs e)

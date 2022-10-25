@@ -110,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(716, 60);
+            this.label1.Location = new System.Drawing.Point(716, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 28);
             this.label1.TabIndex = 65;
@@ -139,7 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(719, 120);
+            this.label5.Location = new System.Drawing.Point(719, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 28);
             this.label5.TabIndex = 70;
@@ -148,7 +148,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(846, 124);
+            this.comboBox2.Location = new System.Drawing.Point(846, 57);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(329, 28);
             this.comboBox2.TabIndex = 71;
@@ -156,7 +156,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(846, 64);
+            this.comboBox3.Location = new System.Drawing.Point(846, 120);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(329, 28);
             this.comboBox3.TabIndex = 72;

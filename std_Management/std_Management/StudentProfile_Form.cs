@@ -20,23 +20,25 @@ namespace std_Management
 
         public bool checkObject()
         {
+            var repo = new RepositoryBase<User>();
 
-            if (String.IsNullOrWhiteSpace(txt_userid.Text))
+
+            if (String.IsNullOrWhiteSpace(txt_userid.Text) || txt_userid.Text.Length != 8)
             {
-                MessageBox.Show("Please input your user student Id", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please input your user student Id (Max length 8)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_userid.Focus();
                 return false;
             }
 
-            if (String.IsNullOrWhiteSpace(txt_firstname.Text))
+            if (String.IsNullOrWhiteSpace(txt_firstname.Text) || txt_firstname.Text.Length > 50)
             {
-                MessageBox.Show("Please input your frist name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please input your frist name (Max length 50)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_firstname.Focus();
                 return false;
             }
-            if (String.IsNullOrWhiteSpace(txt_lastname.Text))
+            if (String.IsNullOrWhiteSpace(txt_lastname.Text) || txt_lastname.Text.Length > 50)
             {
-                MessageBox.Show("Please input your last name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please input your last name (Max length 50)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_lastname.Focus();
                 return false;
             }
@@ -46,30 +48,49 @@ namespace std_Management
                 dtp_birthdate.Focus();
                 return false;
             }
+            int bornYear = dtp_birthdate.Value.Year;
+            int this_year = DateTime.Now.Year;
+            if ((this_year - bornYear) < 17 || (this_year - bornYear) > 100)
+            {
+                MessageBox.Show("Age should be between 17 and 100 year", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+
             if (String.IsNullOrWhiteSpace(rdo_female.Text) || String.IsNullOrWhiteSpace(rdo_male.Text))
             {
                 MessageBox.Show("Please choise your gender", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 groupBox1.Focus();
                 return false;
             }
-            if (String.IsNullOrWhiteSpace(txt_phone.Text))
+            if (String.IsNullOrWhiteSpace(txt_phone.Text) || txt_phone.Text.Length != 10)
             {
-                MessageBox.Show("Please input your phone number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please input your phone number (Length 10)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_phone.Focus();
                 return false;
             }
+
             if (String.IsNullOrWhiteSpace(txt_email.Text))
             {
                 MessageBox.Show("Please input your email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_email.Focus();
                 return false;
             }
+
+            if (!txt_email.Text.Contains("@"))
+            {
+                MessageBox.Show(txt_email.Text + " is incorrect", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_email.Focus();
+                return false;
+            }
+
             if (String.IsNullOrWhiteSpace(txt_address.Text))
             {
                 MessageBox.Show("Please input your address", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_address.Focus();
                 return false;
             }
+
             else
             {
                 return true;

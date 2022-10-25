@@ -143,7 +143,6 @@ C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.csproj.AssemblyReference.cache
-C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\Student_Management.AddDeleteStdInClassForm.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.AddNewClass_Form.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\Student_Management.AddNewStudent_Form.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.AddSubject_Form.resources
@@ -154,7 +153,6 @@ C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\Student_Management.MainForm.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.MarkManagement.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.Properties.Resources.resources
-C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\Student_Management.Static_Form.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\Student_Management.StudentList_Form.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.StudentMain_Form.resources
 C:\Users\Admin\OneDrive - Đại học FPT- FPT University\Desktop\PRN_as\window-form\std_Management\std_Management\obj\Debug\net5.0-windows\std_Management.StudentProfile_Form.resources

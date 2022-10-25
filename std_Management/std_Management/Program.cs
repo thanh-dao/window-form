@@ -22,7 +22,7 @@ namespace std_Management
             Application.SetCompatibleTextRenderingDefault(false);
             /*User user = new User();
             user.UserId = "TE0002";*/
-            Application.Run(new Login_Form ());
+            Application.Run(new Login_Form());
         }
     }
 }
