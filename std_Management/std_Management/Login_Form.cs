@@ -38,11 +38,6 @@ namespace Student_Management
             return true;
         }
 
-
-
-
- 
-
         void exit()
         {
             if (MessageBox.Show("Do you want to exit?", "Message", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)

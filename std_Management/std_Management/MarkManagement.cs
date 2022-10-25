@@ -87,9 +87,18 @@ namespace std_Management
         private void btnUpdate(object sender, EventArgs e)
         {
             var repo = new RepositoryBase<Mark>();
-
+            float _Mark;
             string _Subject = cbSubject.Text;
-            float _Mark = (float)nudMark.Value;
+            if (nudMark.Value < 11)
+            {
+                _Mark = (float)nudMark.Value;
+            }
+            else
+            {
+                MessageBox.Show("Insert mark again (0-10)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+                
+            }
 
             var SubjectTeacher = new RepositoryBase<SubjectTeacher>().GetAll()
                 .FirstOrDefault(i => i.SubjectId.Equals(_Subject));

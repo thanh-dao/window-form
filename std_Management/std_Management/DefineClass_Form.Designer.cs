@@ -108,7 +108,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(626, 81);
+=======
+            this.label1.Location = new System.Drawing.Point(716, 116);
+>>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 65;
@@ -138,7 +142,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(628, 40);
+=======
+            this.label5.Location = new System.Drawing.Point(719, 53);
+>>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 21);
             this.label5.TabIndex = 70;
@@ -146,21 +154,37 @@
             // 
             // cbSubject
             // 
+<<<<<<< HEAD
             this.cbSubject.FormattingEnabled = true;
             this.cbSubject.Location = new System.Drawing.Point(740, 38);
             this.cbSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubject.Name = "cbSubject";
             this.cbSubject.Size = new System.Drawing.Size(288, 23);
             this.cbSubject.TabIndex = 71;
+=======
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(846, 57);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(329, 28);
+            this.comboBox2.TabIndex = 71;
+>>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             // 
             // cbTeacher
             // 
+<<<<<<< HEAD
             this.cbTeacher.FormattingEnabled = true;
             this.cbTeacher.Location = new System.Drawing.Point(740, 84);
             this.cbTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTeacher.Name = "cbTeacher";
             this.cbTeacher.Size = new System.Drawing.Size(288, 23);
             this.cbTeacher.TabIndex = 72;
+=======
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(846, 120);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(329, 28);
+            this.comboBox3.TabIndex = 72;
+>>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             // 
             // btn_deleteUser
             // 

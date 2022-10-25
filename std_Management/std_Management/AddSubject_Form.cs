@@ -22,20 +22,26 @@ namespace std_Management
         public bool checkObject()
         {
 
-            if (String.IsNullOrWhiteSpace(txtSubjectID.Text))
+            if (String.IsNullOrWhiteSpace(txtSubjectID.Text) || txtSubjectID.Text.Length != 6)
             {
-                MessageBox.Show("Please input subject id", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please input subject id (Max length 6)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSubjectID.Focus();
                 return false;
             }
 
-            if (String.IsNullOrWhiteSpace(txtSubjectName.Text))
+            if (String.IsNullOrWhiteSpace(txtSubjectName.Text) || txtSubjectName.Text.Length > 100)
             {
-                MessageBox.Show("Please input subject name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please input subject name (Max length 100)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSubjectName.Focus();
                 return false;
             }
-         
+
+            if (nudNumOfCredits.Value > 0 || nudNumOfCredits.Value < 100)
+            {
+                MessageBox.Show("Number of credits must be between 1-99.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                nudNumOfCredits.Focus();
+                return false;
+            }
 
             else
             {

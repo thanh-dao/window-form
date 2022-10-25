@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherProfile_Form));
-            this.btn_findId = new System.Windows.Forms.Button();
             this.btn_updateUser = new System.Windows.Forms.Button();
             this.btn_uploadImage = new System.Windows.Forms.Button();
             this.pictureBoxStudentImage = new System.Windows.Forms.PictureBox();
@@ -56,19 +55,6 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_findId
-            // 
-            this.btn_findId.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_findId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_findId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_findId.Location = new System.Drawing.Point(430, 26);
-            this.btn_findId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_findId.Name = "btn_findId";
-            this.btn_findId.Size = new System.Drawing.Size(117, 52);
-            this.btn_findId.TabIndex = 58;
-            this.btn_findId.Text = "Search ID";
-            this.btn_findId.UseVisualStyleBackColor = false;
-            // 
             // btn_updateUser
             // 
             this.btn_updateUser.BackColor = System.Drawing.Color.DarkGreen;
@@ -81,6 +67,7 @@
             this.btn_updateUser.TabIndex = 56;
             this.btn_updateUser.Text = "Edit";
             this.btn_updateUser.UseVisualStyleBackColor = false;
+            this.btn_updateUser.Click += new System.EventHandler(this.btn_updateUser_Click);
             // 
             // btn_uploadImage
             // 
@@ -301,7 +288,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 626);
-            this.Controls.Add(this.btn_findId);
             this.Controls.Add(this.btn_updateUser);
             this.Controls.Add(this.btn_uploadImage);
             this.Controls.Add(this.pictureBoxStudentImage);
@@ -333,8 +319,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_findId;
         private System.Windows.Forms.Button btn_updateUser;
         private System.Windows.Forms.Button btn_uploadImage;
         internal System.Windows.Forms.PictureBox pictureBoxStudentImage;

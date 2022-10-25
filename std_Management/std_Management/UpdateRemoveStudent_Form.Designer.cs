@@ -72,9 +72,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(42, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 28);
+            this.label4.Size = new System.Drawing.Size(86, 28);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Student ID:";
+            this.label4.Text = "User ID:";
             // 
             // txt_email
             // 
