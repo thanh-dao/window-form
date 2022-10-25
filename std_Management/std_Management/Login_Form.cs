@@ -64,9 +64,26 @@ namespace Student_Management
                 (p => p.Username.Equals(_username)
                 && p.Password.Equals(_password)).FirstOrDefault();
                 if (_check != null) //ton tai user
-                {                
-                    MainForm NewForm = new MainForm(_check);
-                    NewForm.Show();
+                {
+                    var repoUser = new RepositoryBase<User>();
+
+                    if (repoUser.GetAll().Where(p=> p.UserId.Equals(_check.UserId) && p.RoleId.Equals("AD")).FirstOrDefault() != null)
+                    {
+                        MainForm NewForm = new MainForm(_check);
+                        NewForm.Show();
+                    }
+
+                    if (repoUser.GetAll().Where(p => p.UserId.Equals(_check.UserId) && p.RoleId.Equals("TC")).FirstOrDefault() != null)
+                    {
+                        TeacherMain_Form NewForm = new TeacherMain_Form();
+                        NewForm.Show();
+                    }
+                    if (repoUser.GetAll().Where(p => p.UserId.Equals(_check.UserId) && p.RoleId.Equals("ST")).FirstOrDefault() != null)
+                    {
+                        StudentMain_Form NewForm = new StudentMain_Form(_check);
+                        NewForm.Show();
+                    }
+                    
                 }
                 else
                 {

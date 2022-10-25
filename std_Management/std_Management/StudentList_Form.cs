@@ -60,6 +60,8 @@ namespace Student_Management
             updateRemoveStdF.txt_phone.Text = dtg_studentList.CurrentRow.Cells[5].Value.ToString();
             updateRemoveStdF.txt_email.Text = dtg_studentList.CurrentRow.Cells[6].Value.ToString();
             updateRemoveStdF.txt_address.Text = dtg_studentList.CurrentRow.Cells[7].Value.ToString();
+           /*updateRemoveStdF.pictureBoxStudentImage.ImageLocation = dtg_studentList.CurrentRow.Cells[8].Value.ToString();*/
+           
 
             var repo = new RepositoryBase<User>();
             var account = repo.GetAll().Where(p => p.RoleId.Equals("AD") && p.UserId.Equals(dtg_studentList.CurrentRow.Cells[0].Value.ToString())).FirstOrDefault();

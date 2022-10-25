@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pROFILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sUBJECTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yourInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sUBJECTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subjectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLASSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +62,16 @@
             this.pROFILEToolStripMenuItem.Size = new System.Drawing.Size(114, 35);
             this.pROFILEToolStripMenuItem.Text = "PROFILE";
             // 
+            // yourInformationToolStripMenuItem
+            // 
+            this.yourInformationToolStripMenuItem.BackColor = System.Drawing.Color.Goldenrod;
+            this.yourInformationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.yourInformationToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
+            this.yourInformationToolStripMenuItem.Name = "yourInformationToolStripMenuItem";
+            this.yourInformationToolStripMenuItem.Size = new System.Drawing.Size(255, 32);
+            this.yourInformationToolStripMenuItem.Text = "Your Information";
+            this.yourInformationToolStripMenuItem.Click += new System.EventHandler(this.yourInformationToolStripMenuItem_Click);
+            // 
             // sUBJECTToolStripMenuItem
             // 
             this.sUBJECTToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -73,22 +83,13 @@
             this.sUBJECTToolStripMenuItem.Size = new System.Drawing.Size(119, 35);
             this.sUBJECTToolStripMenuItem.Text = "SUBJECT";
             // 
-            // yourInformationToolStripMenuItem
-            // 
-            this.yourInformationToolStripMenuItem.BackColor = System.Drawing.Color.Goldenrod;
-            this.yourInformationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.yourInformationToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
-            this.yourInformationToolStripMenuItem.Name = "yourInformationToolStripMenuItem";
-            this.yourInformationToolStripMenuItem.Size = new System.Drawing.Size(255, 32);
-            this.yourInformationToolStripMenuItem.Text = "Your Information";
-            // 
             // subjectListToolStripMenuItem
             // 
             this.subjectListToolStripMenuItem.BackColor = System.Drawing.Color.Goldenrod;
             this.subjectListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.subjectListToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.subjectListToolStripMenuItem.Name = "subjectListToolStripMenuItem";
-            this.subjectListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.subjectListToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
             this.subjectListToolStripMenuItem.Text = "Subject List";
             // 
             // cLASSToolStripMenuItem
@@ -108,7 +109,7 @@
             this.classListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.classListToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.classListToolStripMenuItem.Name = "classListToolStripMenuItem";
-            this.classListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.classListToolStripMenuItem.Size = new System.Drawing.Size(182, 32);
             this.classListToolStripMenuItem.Text = "Class List";
             // 
             // TeacherMain_Form

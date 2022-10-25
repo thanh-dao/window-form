@@ -188,7 +188,7 @@
             this.classListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.classListToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.classListToolStripMenuItem.Name = "classListToolStripMenuItem";
-            this.classListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.classListToolStripMenuItem.Size = new System.Drawing.Size(182, 32);
             this.classListToolStripMenuItem.Text = "Class List";
             // 
             // cLASSToolStripMenuItem1
@@ -250,9 +250,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

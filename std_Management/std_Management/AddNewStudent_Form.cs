@@ -187,5 +187,10 @@ namespace Student_Management
         {
             Close();
         }
+
+        private void pictureBoxStudentImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

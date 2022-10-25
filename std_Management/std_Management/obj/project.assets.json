@@ -2967,23 +2967,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\kanek\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+>>>>>>> 56ceee8fefebd7656717ca2dedc3392d819e26db
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "E:\\FALL2022\\c#\\window-form\\std_Management\\std_Management\\std_Management.csproj",
       "projectName": "std_Management",
       "projectPath": "E:\\FALL2022\\c#\\window-form\\std_Management\\std_Management\\std_Management.csproj",
       "packagesPath": "C:\\Users\\kanek\\.nuget\\packages\\",
       "outputPath": "E:\\FALL2022\\c#\\window-form\\std_Management\\std_Management\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Đại học FPT- FPT University\\Desktop\\PRN_as\\window-form\\std_Management\\std_Management\\std_Management.csproj",
+      "projectName": "std_Management",
+      "projectPath": "C:\\Users\\Admin\\OneDrive - Đại học FPT- FPT University\\Desktop\\PRN_as\\window-form\\std_Management\\std_Management\\std_Management.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive - Đại học FPT- FPT University\\Desktop\\PRN_as\\window-form\\std_Management\\std_Management\\obj\\",
+>>>>>>> 56ceee8fefebd7656717ca2dedc3392d819e26db
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\kanek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 56ceee8fefebd7656717ca2dedc3392d819e26db
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3067,7 +3083,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

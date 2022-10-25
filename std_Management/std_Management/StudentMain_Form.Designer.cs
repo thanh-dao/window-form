@@ -33,8 +33,6 @@
             this.yourInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sUBJECTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subjectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cLASSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.classListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,8 +41,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pROFILEToolStripMenuItem,
-            this.sUBJECTToolStripMenuItem,
-            this.cLASSToolStripMenuItem});
+            this.sUBJECTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(651, 39);
@@ -70,6 +67,7 @@
             this.yourInformationToolStripMenuItem.Name = "yourInformationToolStripMenuItem";
             this.yourInformationToolStripMenuItem.Size = new System.Drawing.Size(255, 32);
             this.yourInformationToolStripMenuItem.Text = "Your Information";
+            this.yourInformationToolStripMenuItem.Click += new System.EventHandler(this.yourInformationToolStripMenuItem_Click);
             // 
             // sUBJECTToolStripMenuItem
             // 
@@ -90,26 +88,6 @@
             this.subjectListToolStripMenuItem.Name = "subjectListToolStripMenuItem";
             this.subjectListToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
             this.subjectListToolStripMenuItem.Text = "Subject List";
-            // 
-            // cLASSToolStripMenuItem
-            // 
-            this.cLASSToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.cLASSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.classListToolStripMenuItem});
-            this.cLASSToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cLASSToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.cLASSToolStripMenuItem.Name = "cLASSToolStripMenuItem";
-            this.cLASSToolStripMenuItem.Size = new System.Drawing.Size(95, 35);
-            this.cLASSToolStripMenuItem.Text = "CLASS";
-            // 
-            // classListToolStripMenuItem
-            // 
-            this.classListToolStripMenuItem.BackColor = System.Drawing.Color.Goldenrod;
-            this.classListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.classListToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
-            this.classListToolStripMenuItem.Name = "classListToolStripMenuItem";
-            this.classListToolStripMenuItem.Size = new System.Drawing.Size(182, 32);
-            this.classListToolStripMenuItem.Text = "Class List";
             // 
             // StudentMain_Form
             // 
@@ -133,7 +111,5 @@
         private System.Windows.Forms.ToolStripMenuItem yourInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sUBJECTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subjectListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cLASSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem classListToolStripMenuItem;
     }
 }

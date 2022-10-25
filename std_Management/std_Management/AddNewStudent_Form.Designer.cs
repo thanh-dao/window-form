@@ -254,6 +254,7 @@
             // pictureBoxStudentImage
             // 
             this.pictureBoxStudentImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStudentImage.Image")));
+            this.pictureBoxStudentImage.ImageLocation = "";
             this.pictureBoxStudentImage.Location = new System.Drawing.Point(219, 700);
             this.pictureBoxStudentImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxStudentImage.Name = "pictureBoxStudentImage";
@@ -261,6 +262,7 @@
             this.pictureBoxStudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxStudentImage.TabIndex = 18;
             this.pictureBoxStudentImage.TabStop = false;
+            this.pictureBoxStudentImage.Click += new System.EventHandler(this.pictureBoxStudentImage_Click);
             // 
             // btn_uploadImage
             // 

@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfile_Form));
-            this.btn_findId = new System.Windows.Forms.Button();
-            this.btn_updateUser = new System.Windows.Forms.Button();
+            this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.btn_uploadImage = new System.Windows.Forms.Button();
             this.pictureBoxStudentImage = new System.Windows.Forms.PictureBox();
             this.lb_picture = new System.Windows.Forms.Label();
@@ -56,31 +55,19 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_findId
+            // btnUpdateStudent
             // 
-            this.btn_findId.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_findId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_findId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_findId.Location = new System.Drawing.Point(439, 16);
-            this.btn_findId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_findId.Name = "btn_findId";
-            this.btn_findId.Size = new System.Drawing.Size(117, 52);
-            this.btn_findId.TabIndex = 58;
-            this.btn_findId.Text = "Search ID";
-            this.btn_findId.UseVisualStyleBackColor = false;
-            // 
-            // btn_updateUser
-            // 
-            this.btn_updateUser.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_updateUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_updateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_updateUser.Location = new System.Drawing.Point(272, 515);
-            this.btn_updateUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_updateUser.Name = "btn_updateUser";
-            this.btn_updateUser.Size = new System.Drawing.Size(221, 78);
-            this.btn_updateUser.TabIndex = 56;
-            this.btn_updateUser.Text = "Edit";
-            this.btn_updateUser.UseVisualStyleBackColor = false;
+            this.btnUpdateStudent.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnUpdateStudent.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateStudent.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateStudent.Location = new System.Drawing.Point(272, 515);
+            this.btnUpdateStudent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateStudent.Name = "btnUpdateStudent";
+            this.btnUpdateStudent.Size = new System.Drawing.Size(221, 78);
+            this.btnUpdateStudent.TabIndex = 56;
+            this.btnUpdateStudent.Text = "Edit";
+            this.btnUpdateStudent.UseVisualStyleBackColor = false;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // btn_uploadImage
             // 
@@ -301,8 +288,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 623);
-            this.Controls.Add(this.btn_findId);
-            this.Controls.Add(this.btn_updateUser);
+            this.Controls.Add(this.btnUpdateStudent);
             this.Controls.Add(this.btn_uploadImage);
             this.Controls.Add(this.pictureBoxStudentImage);
             this.Controls.Add(this.lb_picture);
@@ -333,9 +319,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_findId;
-        private System.Windows.Forms.Button btn_updateUser;
+        private System.Windows.Forms.Button btnUpdateStudent;
         private System.Windows.Forms.Button btn_uploadImage;
         internal System.Windows.Forms.PictureBox pictureBoxStudentImage;
         private System.Windows.Forms.Label lb_picture;

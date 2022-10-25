@@ -28,44 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_updateUser = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnAddNewClass = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbClassID = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtAccountName = new System.Windows.Forms.TextBox();
-            this.txtAccountId = new System.Windows.Forms.TextBox();
-            this.dgvBankAccount = new System.Windows.Forms.DataGridView();
+            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.txtClassId = new System.Windows.Forms.TextBox();
+            this.dtgAddNewClass = new System.Windows.Forms.DataGridView();
             this.btn_refresh = new System.Windows.Forms.Button();
-            this.btn_deleteUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBankAccount)).BeginInit();
+            this.btnRemoveClass = new System.Windows.Forms.Button();
+            this.btnUpdateClass = new System.Windows.Forms.Button();
+            this.nudNumOfStudent = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAddNewClass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumOfStudent)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_updateUser
+            // btnAddNewClass
             // 
-            this.btn_updateUser.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_updateUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_updateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_updateUser.Location = new System.Drawing.Point(167, 236);
-            this.btn_updateUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_updateUser.Name = "btn_updateUser";
-            this.btn_updateUser.Size = new System.Drawing.Size(132, 50);
-            this.btn_updateUser.TabIndex = 59;
-            this.btn_updateUser.Text = "Add";
-            this.btn_updateUser.UseVisualStyleBackColor = false;
-            this.btn_updateUser.Click += new System.EventHandler(this.btn_updateUser_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(274, 165);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(329, 34);
-            this.textBox2.TabIndex = 58;
+            this.btnAddNewClass.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAddNewClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddNewClass.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewClass.Location = new System.Drawing.Point(167, 236);
+            this.btnAddNewClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddNewClass.Name = "btnAddNewClass";
+            this.btnAddNewClass.Size = new System.Drawing.Size(132, 50);
+            this.btnAddNewClass.TabIndex = 59;
+            this.btnAddNewClass.Text = "Add";
+            this.btnAddNewClass.UseVisualStyleBackColor = false;
+            this.btnAddNewClass.Click += new System.EventHandler(this.btnAddNewClass_Click);
             // 
             // label4
             // 
@@ -115,35 +107,37 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(112, 34);
             this.txtSearch.TabIndex = 50;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // txtAccountName
+            // txtClassName
             // 
-            this.txtAccountName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAccountName.Location = new System.Drawing.Point(274, 91);
-            this.txtAccountName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAccountName.Name = "txtAccountName";
-            this.txtAccountName.Size = new System.Drawing.Size(329, 34);
-            this.txtAccountName.TabIndex = 48;
+            this.txtClassName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtClassName.Location = new System.Drawing.Point(274, 91);
+            this.txtClassName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(329, 34);
+            this.txtClassName.TabIndex = 48;
             // 
-            // txtAccountId
+            // txtClassId
             // 
-            this.txtAccountId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAccountId.Location = new System.Drawing.Point(274, 28);
-            this.txtAccountId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAccountId.Name = "txtAccountId";
-            this.txtAccountId.Size = new System.Drawing.Size(329, 34);
-            this.txtAccountId.TabIndex = 47;
+            this.txtClassId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtClassId.Location = new System.Drawing.Point(274, 28);
+            this.txtClassId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtClassId.Name = "txtClassId";
+            this.txtClassId.Size = new System.Drawing.Size(329, 34);
+            this.txtClassId.TabIndex = 47;
             // 
-            // dgvBankAccount
+            // dtgAddNewClass
             // 
-            this.dgvBankAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBankAccount.Location = new System.Drawing.Point(59, 351);
-            this.dgvBankAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvBankAccount.Name = "dgvBankAccount";
-            this.dgvBankAccount.RowHeadersWidth = 51;
-            this.dgvBankAccount.RowTemplate.Height = 25;
-            this.dgvBankAccount.Size = new System.Drawing.Size(844, 275);
-            this.dgvBankAccount.TabIndex = 46;
+            this.dtgAddNewClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAddNewClass.Location = new System.Drawing.Point(59, 351);
+            this.dtgAddNewClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtgAddNewClass.Name = "dtgAddNewClass";
+            this.dtgAddNewClass.RowHeadersWidth = 51;
+            this.dtgAddNewClass.RowTemplate.Height = 25;
+            this.dtgAddNewClass.Size = new System.Drawing.Size(844, 275);
+            this.dtgAddNewClass.TabIndex = 46;
+            this.dtgAddNewClass.DoubleClick += new System.EventHandler(this.dtgAddNewClass_DoubleClick);
             // 
             // btn_refresh
             // 
@@ -158,54 +152,66 @@
             this.btn_refresh.TabIndex = 60;
             this.btn_refresh.Text = "REFRESH";
             this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
-            // btn_deleteUser
+            // btnRemoveClass
             // 
-            this.btn_deleteUser.BackColor = System.Drawing.Color.DarkRed;
-            this.btn_deleteUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_deleteUser.ForeColor = System.Drawing.Color.White;
-            this.btn_deleteUser.Location = new System.Drawing.Point(471, 236);
-            this.btn_deleteUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_deleteUser.Name = "btn_deleteUser";
-            this.btn_deleteUser.Size = new System.Drawing.Size(132, 50);
-            this.btn_deleteUser.TabIndex = 62;
-            this.btn_deleteUser.Text = "Remove";
-            this.btn_deleteUser.UseVisualStyleBackColor = false;
+            this.btnRemoveClass.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRemoveClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRemoveClass.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveClass.Location = new System.Drawing.Point(471, 236);
+            this.btnRemoveClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemoveClass.Name = "btnRemoveClass";
+            this.btnRemoveClass.Size = new System.Drawing.Size(132, 50);
+            this.btnRemoveClass.TabIndex = 62;
+            this.btnRemoveClass.Text = "Remove";
+            this.btnRemoveClass.UseVisualStyleBackColor = false;
+            this.btnRemoveClass.Click += new System.EventHandler(this.btnRemoveClass_Click);
             // 
-            // button1
+            // btnUpdateClass
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(322, 236);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 50);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdateClass.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateClass.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateClass.Location = new System.Drawing.Point(322, 236);
+            this.btnUpdateClass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateClass.Name = "btnUpdateClass";
+            this.btnUpdateClass.Size = new System.Drawing.Size(132, 50);
+            this.btnUpdateClass.TabIndex = 61;
+            this.btnUpdateClass.Text = "Update";
+            this.btnUpdateClass.UseVisualStyleBackColor = false;
+            this.btnUpdateClass.Click += new System.EventHandler(this.btnUpdateClass_Click);
+            // 
+            // nudNumOfStudent
+            // 
+            this.nudNumOfStudent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nudNumOfStudent.Location = new System.Drawing.Point(274, 168);
+            this.nudNumOfStudent.Name = "nudNumOfStudent";
+            this.nudNumOfStudent.Size = new System.Drawing.Size(329, 34);
+            this.nudNumOfStudent.TabIndex = 63;
             // 
             // AddNewClass_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 760);
-            this.Controls.Add(this.btn_deleteUser);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nudNumOfStudent);
+            this.Controls.Add(this.btnRemoveClass);
+            this.Controls.Add(this.btnUpdateClass);
             this.Controls.Add(this.btn_refresh);
-            this.Controls.Add(this.btn_updateUser);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnAddNewClass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbClassID);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.txtAccountName);
-            this.Controls.Add(this.txtAccountId);
-            this.Controls.Add(this.dgvBankAccount);
+            this.Controls.Add(this.txtClassName);
+            this.Controls.Add(this.txtClassId);
+            this.Controls.Add(this.dtgAddNewClass);
             this.Name = "AddNewClass_Form";
             this.Text = "AddNewClass_Form";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBankAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAddNewClass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumOfStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,18 +219,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_updateUser;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnAddNewClass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbClassID;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.TextBox txtAccountName;
-        private System.Windows.Forms.TextBox txtAccountId;
-        private System.Windows.Forms.DataGridView dgvBankAccount;
+        private System.Windows.Forms.TextBox txtClassName;
+        private System.Windows.Forms.TextBox txtClassId;
+        private System.Windows.Forms.DataGridView dtgAddNewClass;
         private System.Windows.Forms.Button btn_refresh;
-        internal System.Windows.Forms.Button btn_deleteUser;
-        private System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button btnRemoveClass;
+        private System.Windows.Forms.Button btnUpdateClass;
+        private System.Windows.Forms.NumericUpDown nudNumOfStudent;
     }
 }
