@@ -13,9 +13,11 @@ namespace std_Management
 {
     public partial class ClassUpdateMark_Form : Form
     {
-        public ClassUpdateMark_Form()
+        User _user = new User();
+        public ClassUpdateMark_Form(User u)
         {
             InitializeComponent();
+            _user = u;
             var repo = new RepositoryBase<Class>();
             dtgClassUpdateMark.DataSource = repo.GetAll().Select(i => new { i.ClassId, i.ClassName, i.NumberOfStudent }).ToList();
         }
@@ -37,14 +39,29 @@ namespace std_Management
 
         private void dtg_studentList_DoubleClick(object sender, EventArgs e)
         {
-            MarkManagement MarkManagement = new MarkManagement();
+            
             //UpdateRemoveSubject.txtSubjectID.Text = dtgSujectList.CurrentRow.Cells[0].Value.ToString();
             var classId = dtgClassUpdateMark.CurrentRow.Cells[0].Value.ToString();
-
-            var roles = new RepositoryBase<Role>().GetAll().ToList();
+            MarkManagement MarkManagement = new MarkManagement(classId);
             var studentRepo = new RepositoryBase<User>();
+            var classRepo = new RepositoryBase<Class>();
+            var classStudentRepo = new RepositoryBase<ClassStudent>();
+            var classStudents = classStudentRepo.GetAll().Where(i => i.ClassId.Equals(classId)).ToList();
+            var classSubject = new RepositoryBase<ClassSubject>().GetAll().Where(i => i.ClassId.Equals(classId)).Select(item => item.SubjectTeacherId).FirstOrDefault();
 
-            var studentList = studentRepo.GetAll().Select(i => new
+            var students = new List<User>();
+            var markRepo = new RepositoryBase<Mark>();
+
+            classStudents.ForEach(i =>
+            {
+                Console.WriteLine(i.StudentId);
+                User student = studentRepo.GetAll().FirstOrDefault(student => student.UserId == i.StudentId);
+                students.Add(student);
+            });
+
+            User student = studentRepo.Get("SE140876");
+            List<object> stuList = new List<object>();
+            var studentList = students.Select(i => new
             {
                 i.UserId,
                 i.FirstName,
@@ -56,26 +73,10 @@ namespace std_Management
                 i.Address,
                 i.Picture,
                 Status = i.Status.Value ? "Active" : "Suspend",
-                Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
-            }).Where(p => p.Role.Equals("Student")).OrderBy(i => i.Role).ToList();
-
-
-            var classRepo = new RepositoryBase<Class>();
-            var classes = classRepo.GetAll().Where(p => p.ClassStudents.Equals(classId)).ToList();
-            List<User> list = new List<User>();
-            var classStudentRepo = new RepositoryBase<ClassStudent>();
-            classes.ForEach(item =>
-            {
-                classStudentRepo.GetAll().Where(p => p.ClassId.Equals(classId)).ToList().ForEach(i => list.Add(i.Student));
             });
-
-
-
-            MarkManagement.dtgMarkManagement.DataSource = studentList;
-            MarkManagement.dtgMarkManagement.DataSource = roles;
-            MarkManagement.dtgMarkManagement.DataSource = list;
+            MarkManagement.dtgMarkManagement.DataSource = students;
             MarkManagement.txtAccountId.Text = classId;
-            MarkManagement.Show();
+            MarkManagement.ShowDialog();
         }
     }
 }

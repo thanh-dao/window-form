@@ -1,3 +1,4 @@
+using std_Management.Models;
 using Student_Management;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,9 @@ namespace std_Management
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClassUpdateMark_Form());
+            User user = new User();
+            user.UserId = "TE0002";
+            Application.Run(new ClassUpdateMark_Form(user));
         }
     }
 }

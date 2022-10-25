@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,8 +22,11 @@ namespace Student_Management
         {
             InitializeComponent();
             this.acc = acc;
+            //AllocConsole();
         }
-
+        /*[DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();*/
         private void addNewStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddNewStudent_Form addStdF = new AddNewStudent_Form();
