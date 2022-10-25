@@ -75,7 +75,7 @@ namespace Student_Management
 
                     if (repoUser.GetAll().Where(p => p.UserId.Equals(_check.UserId) && p.RoleId.Equals("TC")).FirstOrDefault() != null)
                     {
-                        TeacherMain_Form NewForm = new TeacherMain_Form();
+                        TeacherMain_Form NewForm = new TeacherMain_Form(_check);
                         NewForm.Show();
                     }
                     if (repoUser.GetAll().Where(p => p.UserId.Equals(_check.UserId) && p.RoleId.Equals("ST")).FirstOrDefault() != null)
