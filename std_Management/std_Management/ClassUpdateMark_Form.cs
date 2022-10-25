@@ -57,23 +57,23 @@ namespace std_Management
                 i.Picture,
                 Status = i.Status.Value ? "Active" : "Suspend",
                 Role = roles.Where(item => item.RoleId.Equals(i.RoleId)).FirstOrDefault().RoleName,
-            }).Where(p => p.Role.Equals("Student")).OrderBy(i => i.Role).ToList();
+            }).Where(p => p.Role.Equals("Student") ).OrderBy(i => i.Role).ToList();
 
-
-            var classRepo = new RepositoryBase<Class>();
-            var classes = classRepo.GetAll().Where(p => p.ClassStudents.Equals(classId)).ToList();
-            List<User> list = new List<User>();
             var classStudentRepo = new RepositoryBase<ClassStudent>();
-            classes.ForEach(item =>
+            var classStudent= classStudentRepo.GetAll().Where(p=>p.ClassId.Equals(classId)).ToList();
+
+
+   
+            /*classes.ForEach(item =>
             {
                 classStudentRepo.GetAll().Where(p => p.ClassId.Equals(classId)).ToList().ForEach(i => list.Add(i.Student));
-            });
+            });*/
 
 
 
-            MarkManagement.dtgMarkManagement.DataSource = studentList;
-            MarkManagement.dtgMarkManagement.DataSource = roles;
-            MarkManagement.dtgMarkManagement.DataSource = list;
+            MarkManagement.dtgMarkManagement.DataSource = classStudent;
+            /*MarkManagement.dtgMarkManagement.DataSource = roles;
+            MarkManagement.dtgMarkManagement.DataSource = list;*/
             MarkManagement.txtAccountId.Text = classId;
             MarkManagement.Show();
         }

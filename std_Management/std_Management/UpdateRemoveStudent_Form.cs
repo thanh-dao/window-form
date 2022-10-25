@@ -25,9 +25,7 @@ namespace Student_Management
         }
 
         public bool checkObject()
-        {
-            var repo = new RepositoryBase<User>();
-
+        { 
 
             if (String.IsNullOrWhiteSpace(txt_userid.Text))
             {

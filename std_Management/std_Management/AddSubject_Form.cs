@@ -48,7 +48,17 @@ namespace std_Management
             txtSubjectName.Text = "";
             nudNumOfCredits.Value = 0;
         }
-        private void btn_updateUser_Click(object sender, EventArgs e)
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+                if (MessageBox.Show("Do you want to exit?", "Message", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.Close();
+            }
+        }
+
+
+        private void btnAddNewSubject_Click(object sender, EventArgs e)
         {
             if (!checkObject())
             {
@@ -58,7 +68,7 @@ namespace std_Management
 
             string _SubjectId = txtSubjectID.Text;
             string _SujectName = txtSubjectName.Text;
-            int _NumOfCredits = (int) nudNumOfCredits.Value;
+            int _NumOfCredits = (int)nudNumOfCredits.Value;
 
 
             var CheckId = repo.GetAll().Where(p => p.SubjectId.Trim().Equals(_SubjectId.Trim())).FirstOrDefault();
@@ -75,20 +85,12 @@ namespace std_Management
                 SubjectId = _SubjectId,
                 SubjectName = _SujectName,
                 NumberOfCredits = _NumOfCredits,
-    
+
             };
 
             repo.Create(subject);
             ResetForm();
             MessageBox.Show("Add new subject successfully.", "Notification", MessageBoxButtons.OK);
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-                if (MessageBox.Show("Do you want to exit?", "Message", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    this.Close();
-            }
         }
     }
 }

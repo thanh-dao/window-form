@@ -30,7 +30,7 @@
         {
             this.lbNumOfCredits = new System.Windows.Forms.Label();
             this.lbSubjectName = new System.Windows.Forms.Label();
-            this.btn_updateUser = new System.Windows.Forms.Button();
+            this.btnAddNewSubject = new System.Windows.Forms.Button();
             this.txtSubjectName = new System.Windows.Forms.TextBox();
             this.txtSubjectID = new System.Windows.Forms.TextBox();
             this.lbSubjectID = new System.Windows.Forms.Label();
@@ -59,19 +59,19 @@
             this.lbSubjectName.TabIndex = 46;
             this.lbSubjectName.Text = "Subject Name:";
             // 
-            // btn_updateUser
+            // btnAddNewSubject
             // 
-            this.btn_updateUser.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_updateUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_updateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_updateUser.Location = new System.Drawing.Point(114, 305);
-            this.btn_updateUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_updateUser.Name = "btn_updateUser";
-            this.btn_updateUser.Size = new System.Drawing.Size(157, 78);
-            this.btn_updateUser.TabIndex = 44;
-            this.btn_updateUser.Text = "Add";
-            this.btn_updateUser.UseVisualStyleBackColor = false;
-            this.btn_updateUser.Click += new System.EventHandler(this.btn_updateUser_Click);
+            this.btnAddNewSubject.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAddNewSubject.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddNewSubject.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewSubject.Location = new System.Drawing.Point(114, 305);
+            this.btnAddNewSubject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddNewSubject.Name = "btnAddNewSubject";
+            this.btnAddNewSubject.Size = new System.Drawing.Size(157, 78);
+            this.btnAddNewSubject.TabIndex = 44;
+            this.btnAddNewSubject.Text = "Add";
+            this.btnAddNewSubject.UseVisualStyleBackColor = false;
+            this.btnAddNewSubject.Click += new System.EventHandler(this.btnAddNewSubject_Click);
             // 
             // txtSubjectName
             // 
@@ -130,7 +130,7 @@
             this.Controls.Add(this.lbNumOfCredits);
             this.Controls.Add(this.lbSubjectName);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btn_updateUser);
+            this.Controls.Add(this.btnAddNewSubject);
             this.Controls.Add(this.txtSubjectName);
             this.Controls.Add(this.txtSubjectID);
             this.Controls.Add(this.lbSubjectID);
@@ -146,7 +146,7 @@
 
         private System.Windows.Forms.Label lbNumOfCredits;
         private System.Windows.Forms.Label lbSubjectName;
-        private System.Windows.Forms.Button btn_updateUser;
+        private System.Windows.Forms.Button btnAddNewSubject;
         private System.Windows.Forms.TextBox txtSubjectName;
         private System.Windows.Forms.TextBox txtSubjectID;
         private System.Windows.Forms.Label lbSubjectID;
