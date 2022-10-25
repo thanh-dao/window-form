@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 
 #nullable disable
 
@@ -35,5 +36,12 @@ namespace std_Management.Models
         public virtual ICollection<ClassStudent> ClassStudents { get; set; }
         public virtual ICollection<Mark> Marks { get; set; }
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
+
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
+
     }
 }

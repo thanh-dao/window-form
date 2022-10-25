@@ -13,4 +13,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = std_Management
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\ADmin\Desktop\PRN_AS\window-form\std_Management\std_Management\
+=======
+build_property.ProjectDir = E:\FALL2022\c#\window-form\std_Management\std_Management\
+>>>>>>> 5578179234a0cd70022e6b481efde1c20cbe1191

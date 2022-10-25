@@ -29,12 +29,20 @@ namespace std_Management
 
         private void dtgClassList_DoubleClick(object sender, EventArgs e)
         {
-           /* UpdateRemoveSubject_Form UpdateRemoveSubject = new UpdateRemoveSubject_Form();
-            UpdateRemoveSubject.txtSubjectID.Text = dtgClassList.CurrentRow.Cells[0].Value.ToString();
-            UpdateRemoveSubject.txtSubjectName.Text = dtgClassList.CurrentRow.Cells[1].Value.ToString();
-            UpdateRemoveSubject.nudNumOfCredits.Value = Decimal.Parse(dtgClassList.CurrentRow.Cells[2].Value.ToString());
+            /* UpdateRemoveSubject_Form UpdateRemoveSubject = new UpdateRemoveSubject_Form();
+             UpdateRemoveSubject.txtSubjectID.Text = dtgClassList.CurrentRow.Cells[0].Value.ToString();
+             UpdateRemoveSubject.txtSubjectName.Text = dtgClassList.CurrentRow.Cells[1].Value.ToString();
+             UpdateRemoveSubject.nudNumOfCredits.Value = Decimal.Parse(dtgClassList.CurrentRow.Cells[2].Value.ToString());
 
-            UpdateRemoveSubject.Show();*/
+             UpdateRemoveSubject.Show();*/
+            var classId = dtgClassList.CurrentRow.Cells[0].Value.ToString();
+            var className = dtgClassList.CurrentRow.Cells[1].Value.ToString();
+            var classStudentNumber = dtgClassList.CurrentRow.Cells[2].Value.ToString();
+
+            DefineClass_Form defineClass_Form = new DefineClass_Form(classId, className, classStudentNumber);
+            defineClass_Form.ShowDialog();
+
+
         }
 
         private void txt_classId_TextChanged(object sender, EventArgs e)
