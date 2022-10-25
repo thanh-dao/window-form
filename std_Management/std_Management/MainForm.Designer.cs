@@ -43,7 +43,6 @@
             this.classListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLASSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDCLASSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aDDNEWCLASSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATECLASSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dEFINETECHERSTUDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -170,6 +169,7 @@
             this.uPDATEREMOVESUBJECTToolStripMenuItem.Name = "uPDATEREMOVESUBJECTToolStripMenuItem";
             this.uPDATEREMOVESUBJECTToolStripMenuItem.Size = new System.Drawing.Size(320, 32);
             this.uPDATEREMOVESUBJECTToolStripMenuItem.Text = "Update/Remove Subject";
+            this.uPDATEREMOVESUBJECTToolStripMenuItem.Click += new System.EventHandler(this.uPDATEREMOVESUBJECTToolStripMenuItem_Click);
             // 
             // mARKToolStripMenuItem
             // 
@@ -190,13 +190,13 @@
             this.classListToolStripMenuItem.Name = "classListToolStripMenuItem";
             this.classListToolStripMenuItem.Size = new System.Drawing.Size(182, 32);
             this.classListToolStripMenuItem.Text = "Class List";
+            this.classListToolStripMenuItem.Click += new System.EventHandler(this.classListToolStripMenuItem_Click);
             // 
             // cLASSToolStripMenuItem1
             // 
             this.cLASSToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cLASSToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aDDCLASSToolStripMenuItem,
-            this.aDDNEWCLASSToolStripMenuItem,
             this.uPDATECLASSToolStripMenuItem,
             this.dEFINETECHERSTUDENTToolStripMenuItem});
             this.cLASSToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -213,15 +213,7 @@
             this.aDDCLASSToolStripMenuItem.Name = "aDDCLASSToolStripMenuItem";
             this.aDDCLASSToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
             this.aDDCLASSToolStripMenuItem.Text = "Class List";
-            // 
-            // aDDNEWCLASSToolStripMenuItem
-            // 
-            this.aDDNEWCLASSToolStripMenuItem.BackColor = System.Drawing.Color.Goldenrod;
-            this.aDDNEWCLASSToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.aDDNEWCLASSToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
-            this.aDDNEWCLASSToolStripMenuItem.Name = "aDDNEWCLASSToolStripMenuItem";
-            this.aDDNEWCLASSToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
-            this.aDDNEWCLASSToolStripMenuItem.Text = "Add New Class";
+            this.aDDCLASSToolStripMenuItem.Click += new System.EventHandler(this.aDDCLASSToolStripMenuItem_Click);
             // 
             // uPDATECLASSToolStripMenuItem
             // 
@@ -229,8 +221,9 @@
             this.uPDATECLASSToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.uPDATECLASSToolStripMenuItem.ForeColor = System.Drawing.Color.Maroon;
             this.uPDATECLASSToolStripMenuItem.Name = "uPDATECLASSToolStripMenuItem";
-            this.uPDATECLASSToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
-            this.uPDATECLASSToolStripMenuItem.Text = "Update/Remove Class";
+            this.uPDATECLASSToolStripMenuItem.Size = new System.Drawing.Size(343, 32);
+            this.uPDATECLASSToolStripMenuItem.Text = "Add/Update/Remove Class";
+            this.uPDATECLASSToolStripMenuItem.Click += new System.EventHandler(this.uPDATECLASSToolStripMenuItem_Click);
             // 
             // dEFINETECHERSTUDENTToolStripMenuItem
             // 
@@ -274,7 +267,6 @@
         private System.Windows.Forms.ToolStripMenuItem mARKToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cLASSToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aDDCLASSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aDDNEWCLASSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uPDATECLASSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem classListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dEFINETECHERSTUDENTToolStripMenuItem;

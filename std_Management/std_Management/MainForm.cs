@@ -86,11 +86,6 @@ namespace Student_Management
 
         }
 
-        private void mAJOR1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void sUBJECTSLISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
            subjectList_Form subjectList_Form = new subjectList_Form();
@@ -101,6 +96,29 @@ namespace Student_Management
         {
             AddSubject_Form AddSubject_Form = new AddSubject_Form();
             AddSubject_Form.Show(this);
+        }
+
+        private void uPDATEREMOVESUBJECTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateRemoveSubject_Form UpdateRemoveSubject = new UpdateRemoveSubject_Form();
+            UpdateRemoveSubject.Show(this);
+        }
+
+        private void classListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClassUpdateMark_Form ClassUpdateMark = new ClassUpdateMark_Form();
+            ClassUpdateMark.Show(this);
+        }
+
+        private void aDDCLASSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClassList_Form ClassList = new ClassList_Form();
+            ClassList.Show(this);
+        }
+        private void uPDATECLASSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewClass_Form addNewClass = new AddNewClass_Form();
+            addNewClass.Show(this);
         }
     }
 }

@@ -13,11 +13,9 @@ namespace std_Management
 {
     public partial class ClassUpdateMark_Form : Form
     {
-        User _user = new User();
-        public ClassUpdateMark_Form(User u)
+        public ClassUpdateMark_Form()
         {
             InitializeComponent();
-            _user = u;
             var repo = new RepositoryBase<Class>();
             dtgClassUpdateMark.DataSource = repo.GetAll().Select(i => new { i.ClassId, i.ClassName, i.NumberOfStudent }).ToList();
         }
@@ -37,9 +35,8 @@ namespace std_Management
             txtClassId.Text = "";
         }
 
-        private void dtg_studentList_DoubleClick(object sender, EventArgs e)
+        private void dtgClassUpdateMark_DoubleClick(object sender, EventArgs e)
         {
-            
             //UpdateRemoveSubject.txtSubjectID.Text = dtgSujectList.CurrentRow.Cells[0].Value.ToString();
             var classId = dtgClassUpdateMark.CurrentRow.Cells[0].Value.ToString();
             MarkManagement MarkManagement = new MarkManagement(classId);
@@ -47,7 +44,8 @@ namespace std_Management
             var classRepo = new RepositoryBase<Class>();
             var classStudentRepo = new RepositoryBase<ClassStudent>();
             var classStudents = classStudentRepo.GetAll().Where(i => i.ClassId.Equals(classId)).ToList();
-            var classSubject = new RepositoryBase<ClassSubject>().GetAll().Where(i => i.ClassId.Equals(classId)).Select(item => item.SubjectTeacherId).FirstOrDefault();
+            var classSubject = new RepositoryBase<ClassSubject>().GetAll().Where(i => i.ClassId.Equals(classId))
+                .Select(item => item.SubjectTeacherId).FirstOrDefault();
 
             var students = new List<User>();
             var markRepo = new RepositoryBase<Mark>();
@@ -58,8 +56,6 @@ namespace std_Management
                 User student = studentRepo.GetAll().FirstOrDefault(student => student.UserId == i.StudentId);
                 students.Add(student);
             });
-
-            User student = studentRepo.Get("SE140876");
             List<object> stuList = new List<object>();
             var studentList = students.Select(i => new
             {
@@ -75,7 +71,6 @@ namespace std_Management
                 Status = i.Status.Value ? "Active" : "Suspend",
             });
             MarkManagement.dtgMarkManagement.DataSource = students;
-            MarkManagement.txtAccountId.Text = classId;
             MarkManagement.ShowDialog();
         }
     }

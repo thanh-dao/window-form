@@ -20,9 +20,9 @@ namespace std_Management
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            User user = new User();
-            user.UserId = "TE0002";
-            Application.Run(new ClassUpdateMark_Form(user));
+            /*User user = new User();
+            user.UserId = "TE0002";*/
+            Application.Run(new Login_Form ());
         }
     }
 }

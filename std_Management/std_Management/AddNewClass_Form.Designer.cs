@@ -63,7 +63,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(650, 296);
+            this.label4.Location = new System.Drawing.Point(350, 309);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 28);
             this.label4.TabIndex = 54;
@@ -102,10 +102,10 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch.Location = new System.Drawing.Point(791, 296);
+            this.txtSearch.Location = new System.Drawing.Point(491, 309);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(112, 34);
+            this.txtSearch.Size = new System.Drawing.Size(166, 34);
             this.txtSearch.TabIndex = 50;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -135,7 +135,7 @@
             this.dtgAddNewClass.Name = "dtgAddNewClass";
             this.dtgAddNewClass.RowHeadersWidth = 51;
             this.dtgAddNewClass.RowTemplate.Height = 25;
-            this.dtgAddNewClass.Size = new System.Drawing.Size(844, 275);
+            this.dtgAddNewClass.Size = new System.Drawing.Size(598, 275);
             this.dtgAddNewClass.TabIndex = 46;
             this.dtgAddNewClass.DoubleClick += new System.EventHandler(this.dtgAddNewClass_DoubleClick);
             // 
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 760);
+            this.ClientSize = new System.Drawing.Size(730, 760);
             this.Controls.Add(this.nudNumOfStudent);
             this.Controls.Add(this.btnRemoveClass);
             this.Controls.Add(this.btnUpdateClass);
@@ -219,7 +219,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAddNewClass;
+        internal System.Windows.Forms.Button btnAddNewClass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -227,7 +227,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.TextBox txtClassId;
-        private System.Windows.Forms.DataGridView dtgAddNewClass;
+        internal System.Windows.Forms.DataGridView dtgAddNewClass;
         private System.Windows.Forms.Button btn_refresh;
         internal System.Windows.Forms.Button btnRemoveClass;
         private System.Windows.Forms.Button btnUpdateClass;

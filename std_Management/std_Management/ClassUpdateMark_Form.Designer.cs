@@ -80,7 +80,7 @@
             this.dtgClassUpdateMark.RowTemplate.Height = 24;
             this.dtgClassUpdateMark.Size = new System.Drawing.Size(980, 580);
             this.dtgClassUpdateMark.TabIndex = 8;
-            this.dtgClassUpdateMark.DoubleClick += new System.EventHandler(this.dtg_studentList_DoubleClick);
+            this.dtgClassUpdateMark.DoubleClick += new System.EventHandler(this.dtgClassUpdateMark_DoubleClick);
             // 
             // ClassUpdateMark_Form
             // 
