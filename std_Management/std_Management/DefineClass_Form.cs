@@ -26,6 +26,7 @@ namespace std_Management
             _classId = classId;
             _className = className;
             _classStudentNumber = classStudentNumber;
+            var major = classId.Substring(0, 2);
             InitializeComponent();
             txtClassId.Text = classId;
             txtClassId.Enabled = false;
@@ -70,28 +71,25 @@ namespace std_Management
 
             RepositoryBase<SubjectTeacher> SubjectTeacherRepo = new RepositoryBase<SubjectTeacher>();
             var SubjectTeachers = SubjectTeacherRepo.GetAll().Where(i => SubjectTeacherIds.Contains(i.SubjectTeacherId));
-            List<string> subjects = SubjectTeachers.Select(i => i.SubjectId).ToList();
-            
-            var teacherIds = SubjectTeachers.Select(i => i.TeacherId).ToList();
+            RepositoryBase<MajorSubject> majorSubjectRepo = new RepositoryBase<MajorSubject>();
 
+            List<string> subjects = new RepositoryBase<MajorSubject>().GetAll().Where(item => item.MajorId.Contains(major)).Select(item => item.SubjectId).ToList();//SubjectTeachers.Select(i => i.SubjectId).ToList();
+
+
+            var teacherIds = SubjectTeachers.Where(i => i.SubjectId.Equals(subjects[0])).Select(i => i.TeacherId).ToList();
             RepositoryBase<User> userRepo = new();
             var teachers = userRepo.GetAll().Where(i => teacherIds.Contains(i.UserId)).Select(teacher => new
             {
                 id = teacher.UserId,
                 name = teacher.FirstName + " " + teacher.LastName,
             }).ToList();
-            if (subjects != null)
+            if (!subjects.Any())
             {
-                var major = new RepositoryBase<MajorSubject>().GetAll().Where(i => i.SubjectId.Equals(subjects.FirstOrDefault())).FirstOrDefault();
+                
               //  Console.WriteLine("major   " + major.MajorId);
-                /*var studentAddLists = userRepo.GetAll().Where(i => i.UserId.ToUpper().Contains(major.MajorId.Trim())).Select(i => i.UserId).ToList();
-                userRepo.GetAll().ForEach(i =>
-                {
-                //    Console.WriteLine(i.UserId.ToUpper() + " "  + major.MajorId.Trim());
-                 //   Console.WriteLine();
-                  //  Console.WriteLine(i.UserId.ToUpper().Contains(major.MajorId.Trim()));
-                });
-                cbStudentID.DataSource = studentAddLists;*/
+                var studentAddLists = userRepo.GetAll().Where(i => i.UserId.ToUpper().Contains(major.Trim())).Select(i => i.UserId).ToList();
+                
+                cbStudentID.DataSource = studentAddLists;
             }
 
 
