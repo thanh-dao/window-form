@@ -152,6 +152,7 @@
             this.cbSubject.Name = "cbSubject";
             this.cbSubject.Size = new System.Drawing.Size(288, 23);
             this.cbSubject.TabIndex = 71;
+            this.cbSubject.SelectedIndexChanged += new System.EventHandler(this.cbSubject_SelectedIndexChanged);
             // 
             // cbTeacher
             // 
@@ -257,6 +258,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DefineClass_Form";
             this.Text = "DefineClass_Form";
+            this.Load += new System.EventHandler(this.DefineClass_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
