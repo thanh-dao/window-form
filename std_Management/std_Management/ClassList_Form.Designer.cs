@@ -39,18 +39,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(731, 28);
+            this.label1.Location = new System.Drawing.Point(640, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 28);
+            this.label1.Size = new System.Drawing.Size(105, 21);
             this.label1.TabIndex = 7;
             this.label1.Text = "Search by ID:";
             // 
             // txt_classId
             // 
             this.txt_classId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_classId.Location = new System.Drawing.Point(884, 28);
+            this.txt_classId.Location = new System.Drawing.Point(774, 21);
+            this.txt_classId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_classId.Name = "txt_classId";
-            this.txt_classId.Size = new System.Drawing.Size(142, 34);
+            this.txt_classId.Size = new System.Drawing.Size(125, 29);
             this.txt_classId.TabIndex = 6;
             this.txt_classId.TextChanged += new System.EventHandler(this.txt_classId_TextChanged);
             // 
@@ -60,10 +61,9 @@
             this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_refresh.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_refresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_refresh.Location = new System.Drawing.Point(57, 686);
-            this.btn_refresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_refresh.Location = new System.Drawing.Point(50, 514);
             this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(231, 60);
+            this.btn_refresh.Size = new System.Drawing.Size(202, 45);
             this.btn_refresh.TabIndex = 5;
             this.btn_refresh.Text = "REFRESH";
             this.btn_refresh.UseVisualStyleBackColor = false;
@@ -73,25 +73,24 @@
             // 
             this.dtgClassList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgClassList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgClassList.Location = new System.Drawing.Point(57, 84);
-            this.dtgClassList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtgClassList.Location = new System.Drawing.Point(50, 63);
             this.dtgClassList.Name = "dtgClassList";
             this.dtgClassList.RowHeadersWidth = 51;
             this.dtgClassList.RowTemplate.Height = 24;
-            this.dtgClassList.Size = new System.Drawing.Size(980, 580);
+            this.dtgClassList.Size = new System.Drawing.Size(858, 435);
             this.dtgClassList.TabIndex = 4;
-            this.dtgClassList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgClassList_CellContentClick);
             this.dtgClassList.DoubleClick += new System.EventHandler(this.dtgClassList_DoubleClick);
             // 
             // ClassList_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 781);
+            this.ClientSize = new System.Drawing.Size(946, 586);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_classId);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.dtgClassList);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ClassList_Form";
             this.Text = "ClassList_Form";
             ((System.ComponentModel.ISupportInitialize)(this.dtgClassList)).EndInit();

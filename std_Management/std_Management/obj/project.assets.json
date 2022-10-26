@@ -2967,37 +2967,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\ADmin\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\kanek\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 5578179234a0cd70022e6b481efde1c20cbe1191
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\ADmin\\Desktop\\PRN_AS\\window-form\\std_Management\\std_Management\\std_Management.csproj",
+      "projectUniqueName": "C:\\Users\\ADmin\\Desktop\\PRN_as\\window-form\\std_Management\\std_Management\\std_Management.csproj",
       "projectName": "std_Management",
-      "projectPath": "C:\\Users\\ADmin\\Desktop\\PRN_AS\\window-form\\std_Management\\std_Management\\std_Management.csproj",
+      "projectPath": "C:\\Users\\ADmin\\Desktop\\PRN_as\\window-form\\std_Management\\std_Management\\std_Management.csproj",
       "packagesPath": "C:\\Users\\ADmin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ADmin\\Desktop\\PRN_AS\\window-form\\std_Management\\std_Management\\obj\\",
-=======
-      "projectUniqueName": "E:\\FALL2022\\c#\\window-form\\std_Management\\std_Management\\std_Management.csproj",
-      "projectName": "std_Management",
-      "projectPath": "E:\\FALL2022\\c#\\window-form\\std_Management\\std_Management\\std_Management.csproj",
-      "packagesPath": "C:\\Users\\kanek\\.nuget\\packages\\",
-      "outputPath": "E:\\FALL2022\\c#\\window-form\\std_Management\\std_Management\\obj\\",
->>>>>>> 5578179234a0cd70022e6b481efde1c20cbe1191
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\ADmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\kanek\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 5578179234a0cd70022e6b481efde1c20cbe1191
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

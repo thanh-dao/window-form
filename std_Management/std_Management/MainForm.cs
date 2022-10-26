@@ -100,5 +100,10 @@ namespace Student_Management
             AddNewClass_Form addNewClass = new AddNewClass_Form();
             addNewClass.Show(this);
         }
+
+        private void dEFINETECHERSTUDENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

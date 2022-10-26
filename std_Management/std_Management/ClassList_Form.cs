@@ -52,10 +52,5 @@ namespace std_Management
                 .Where(p => p.ClassId.ToLower().Contains(txt_classId.Text.ToLower())).ToList();
             dtgClassList.DataSource = data;
         }
-
-        private void dtgClassList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

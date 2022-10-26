@@ -40,9 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbSubject = new System.Windows.Forms.ComboBox();
             this.cbTeacher = new System.Windows.Forms.ComboBox();
-            this.btn_deleteUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_updateUser = new System.Windows.Forms.Button();
+            this.btn_DeleteUserClass = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
+            this.btn_AddStudentClass = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -108,15 +108,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-<<<<<<< HEAD
-            this.label1.Location = new System.Drawing.Point(626, 81);
-=======
-            this.label1.Location = new System.Drawing.Point(716, 116);
->>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
+            this.label1.Location = new System.Drawing.Point(624, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 65;
             this.label1.Text = "Teacher:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -142,11 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(628, 40);
-=======
-            this.label5.Location = new System.Drawing.Point(719, 53);
->>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 21);
             this.label5.TabIndex = 70;
@@ -154,74 +147,58 @@
             // 
             // cbSubject
             // 
-<<<<<<< HEAD
             this.cbSubject.FormattingEnabled = true;
             this.cbSubject.Location = new System.Drawing.Point(740, 38);
             this.cbSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubject.Name = "cbSubject";
             this.cbSubject.Size = new System.Drawing.Size(288, 23);
             this.cbSubject.TabIndex = 71;
-=======
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(846, 57);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(329, 28);
-            this.comboBox2.TabIndex = 71;
->>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             // 
             // cbTeacher
             // 
-<<<<<<< HEAD
             this.cbTeacher.FormattingEnabled = true;
             this.cbTeacher.Location = new System.Drawing.Point(740, 84);
             this.cbTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTeacher.Name = "cbTeacher";
             this.cbTeacher.Size = new System.Drawing.Size(288, 23);
             this.cbTeacher.TabIndex = 72;
-=======
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(846, 120);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(329, 28);
-            this.comboBox3.TabIndex = 72;
->>>>>>> 286d10f590318cf5a430e67a9267ef6b9ef8d7b0
             // 
-            // btn_deleteUser
+            // btn_DeleteUserClass
             // 
-            this.btn_deleteUser.BackColor = System.Drawing.Color.DarkRed;
-            this.btn_deleteUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_deleteUser.ForeColor = System.Drawing.Color.White;
-            this.btn_deleteUser.Location = new System.Drawing.Point(913, 191);
-            this.btn_deleteUser.Name = "btn_deleteUser";
-            this.btn_deleteUser.Size = new System.Drawing.Size(116, 38);
-            this.btn_deleteUser.TabIndex = 75;
-            this.btn_deleteUser.Text = "Remove";
-            this.btn_deleteUser.UseVisualStyleBackColor = false;
+            this.btn_DeleteUserClass.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_DeleteUserClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DeleteUserClass.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteUserClass.Location = new System.Drawing.Point(913, 191);
+            this.btn_DeleteUserClass.Name = "btn_DeleteUserClass";
+            this.btn_DeleteUserClass.Size = new System.Drawing.Size(116, 38);
+            this.btn_DeleteUserClass.TabIndex = 75;
+            this.btn_DeleteUserClass.Text = "Remove";
+            this.btn_DeleteUserClass.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnUpdateUser
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(782, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 38);
-            this.button1.TabIndex = 74;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdateUser.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateUser.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateUser.Location = new System.Drawing.Point(782, 191);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(116, 38);
+            this.btnUpdateUser.TabIndex = 74;
+            this.btnUpdateUser.Text = "Update";
+            this.btnUpdateUser.UseVisualStyleBackColor = false;
             // 
-            // btn_updateUser
+            // btn_AddStudentClass
             // 
-            this.btn_updateUser.BackColor = System.Drawing.Color.DarkGreen;
-            this.btn_updateUser.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_updateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_updateUser.Location = new System.Drawing.Point(647, 191);
-            this.btn_updateUser.Name = "btn_updateUser";
-            this.btn_updateUser.Size = new System.Drawing.Size(116, 38);
-            this.btn_updateUser.TabIndex = 73;
-            this.btn_updateUser.Text = "Add";
-            this.btn_updateUser.UseVisualStyleBackColor = false;
-            this.btn_updateUser.Click += new System.EventHandler(this.btn_updateUser_Click);
+            this.btn_AddStudentClass.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_AddStudentClass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_AddStudentClass.ForeColor = System.Drawing.Color.White;
+            this.btn_AddStudentClass.Location = new System.Drawing.Point(647, 191);
+            this.btn_AddStudentClass.Name = "btn_AddStudentClass";
+            this.btn_AddStudentClass.Size = new System.Drawing.Size(116, 38);
+            this.btn_AddStudentClass.TabIndex = 73;
+            this.btn_AddStudentClass.Text = "Add";
+            this.btn_AddStudentClass.UseVisualStyleBackColor = false;
+            this.btn_AddStudentClass.Click += new System.EventHandler(this.btn_updateUser_Click);
             // 
             // dataGridView1
             // 
@@ -247,10 +224,11 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch.Location = new System.Drawing.Point(998, 276);
+            this.txtSearch.Location = new System.Drawing.Point(985, 273);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(98, 29);
             this.txtSearch.TabIndex = 77;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // DefineClass_Form
             // 
@@ -260,9 +238,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btn_deleteUser);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_updateUser);
+            this.Controls.Add(this.btn_DeleteUserClass);
+            this.Controls.Add(this.btnUpdateUser);
+            this.Controls.Add(this.btn_AddStudentClass);
             this.Controls.Add(this.cbTeacher);
             this.Controls.Add(this.cbSubject);
             this.Controls.Add(this.label5);
@@ -298,9 +276,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSubject;
         private System.Windows.Forms.ComboBox cbTeacher;
-        internal System.Windows.Forms.Button btn_deleteUser;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_updateUser;
+        internal System.Windows.Forms.Button btn_DeleteUserClass;
+        private System.Windows.Forms.Button btnUpdateUser;
+        private System.Windows.Forms.Button btn_AddStudentClass;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSearch;

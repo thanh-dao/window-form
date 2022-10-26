@@ -28,8 +28,11 @@ namespace std_Management
             _classStudentNumber = classStudentNumber;
             InitializeComponent();
             txtClassId.Text = classId;
+            txtClassId.Enabled = false;
             txtClassName.Text = className;
+            txtClassName.Enabled = false;
             txtClassNumOfStudent.Text = classStudentNumber;
+            txtClassNumOfStudent.Enabled = false;
 
             RepositoryBase<ClassStudent> ClassStudentRepo = new RepositoryBase<ClassStudent>();
             
@@ -79,13 +82,13 @@ namespace std_Management
             if (subjects != null)
             {
                 var major = new RepositoryBase<MajorSubject>().GetAll().Where(i => i.SubjectId.Equals(subjects.FirstOrDefault())).FirstOrDefault();
-                Console.WriteLine("major   " + major.MajorId);
+              //  Console.WriteLine("major   " + major.MajorId);
                 var studentAddLists = userRepo.GetAll().Where(i => i.UserId.ToUpper().Contains(major.MajorId.Trim())).Select(i => i.UserId).ToList();
                 userRepo.GetAll().ForEach(i =>
                 {
-                    Console.WriteLine(i.UserId.ToUpper() + " "  + major.MajorId.Trim());
-                    Console.WriteLine();
-                    Console.WriteLine(i.UserId.ToUpper().Contains(major.MajorId.Trim()));
+                //    Console.WriteLine(i.UserId.ToUpper() + " "  + major.MajorId.Trim());
+                 //   Console.WriteLine();
+                  //  Console.WriteLine(i.UserId.ToUpper().Contains(major.MajorId.Trim()));
                 });
                 cbStudentID.DataSource = studentAddLists;
             }
@@ -117,6 +120,16 @@ namespace std_Management
         }
 
         private void lbClassID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
         }
