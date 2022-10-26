@@ -83,7 +83,7 @@ namespace std_Management
                 id = teacher.UserId,
                 name = teacher.FirstName + " " + teacher.LastName,
             }).ToList();
-            if (!subjects.Any())
+            if (subjects.Any())
             {
                 
               //  Console.WriteLine("major   " + major.MajorId);
@@ -134,6 +134,49 @@ namespace std_Management
         }
 
         private void btn_DeleteUserClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var major = _classId.Substring(0, 2);
+            RepositoryBase<ClassSubject> ClassSubjectRepo = new RepositoryBase<ClassSubject>();
+            var SubjectTeacherIds = ClassSubjectRepo.GetAll().Where(i => i.ClassId.Equals(_classId))
+                .Select(classSubject => classSubject.SubjectTeacherId).ToList();
+
+            RepositoryBase<SubjectTeacher> SubjectTeacherRepo = new RepositoryBase<SubjectTeacher>();
+            var SubjectTeachers = SubjectTeacherRepo.GetAll().Where(i => SubjectTeacherIds.Contains(i.SubjectTeacherId));
+            RepositoryBase<MajorSubject> majorSubjectRepo = new RepositoryBase<MajorSubject>();
+
+            var subjectId = cbSubject.SelectedValue;
+            Console.WriteLine("'" + subjectId + "'");
+            SubjectTeachers.ToList().ForEach(i =>
+            {
+                Console.WriteLine(i.SubjectId);
+            });
+            var teacherIds = SubjectTeachers.Where(i => i.SubjectId.Trim().Equals(subjectId)).Select(i => i.TeacherId).ToList();
+            RepositoryBase<User> userRepo = new();
+            var teachers = userRepo.GetAll().Where(i => teacherIds.Contains(i.UserId)).Select(teacher => new
+            {
+                id = teacher.UserId,
+                name = teacher.FirstName + " " + teacher.LastName,
+            }).ToList();
+            
+
+                //  Console.WriteLine("major   " + major.MajorId);
+            var studentAddLists = userRepo.GetAll().Where(i => i.UserId.ToUpper().Contains(major.Trim())).Select(i => i.UserId).ToList();
+
+            cbStudentID.DataSource = studentAddLists;
+            cbTeacher.DataSource = new List<String>();
+            cbTeacher.DataSource = teachers;
+            cbTeacher.DisplayMember = "name";
+            cbTeacher.ValueMember = "id";
+
+        }
+
+        private void DefineClass_Form_Load(object sender, EventArgs e)
         {
 
         }
