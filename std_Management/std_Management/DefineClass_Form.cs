@@ -16,7 +16,7 @@ namespace std_Management
         String _classId;
         String _className;
         String _classStudentNumber;
-        public DefineClass_Form()
+        public DefineClass_Form ()
         {
             InitializeComponent();
         }
@@ -65,7 +65,8 @@ namespace std_Management
 
 
             RepositoryBase<ClassSubject> ClassSubjectRepo = new RepositoryBase<ClassSubject>();
-            var SubjectTeacherIds = ClassSubjectRepo.GetAll().Where(i => i.ClassId.Equals(_classId)).Select(classSubject => classSubject.SubjectTeacherId).ToList();
+            var SubjectTeacherIds = ClassSubjectRepo.GetAll().Where(i => i.ClassId.Equals(_classId))
+                .Select(classSubject => classSubject.SubjectTeacherId).ToList();
 
             RepositoryBase<SubjectTeacher> SubjectTeacherRepo = new RepositoryBase<SubjectTeacher>();
             var SubjectTeachers = SubjectTeacherRepo.GetAll().Where(i => SubjectTeacherIds.Contains(i.SubjectTeacherId));
@@ -83,14 +84,14 @@ namespace std_Management
             {
                 var major = new RepositoryBase<MajorSubject>().GetAll().Where(i => i.SubjectId.Equals(subjects.FirstOrDefault())).FirstOrDefault();
               //  Console.WriteLine("major   " + major.MajorId);
-                var studentAddLists = userRepo.GetAll().Where(i => i.UserId.ToUpper().Contains(major.MajorId.Trim())).Select(i => i.UserId).ToList();
+                /*var studentAddLists = userRepo.GetAll().Where(i => i.UserId.ToUpper().Contains(major.MajorId.Trim())).Select(i => i.UserId).ToList();
                 userRepo.GetAll().ForEach(i =>
                 {
                 //    Console.WriteLine(i.UserId.ToUpper() + " "  + major.MajorId.Trim());
                  //   Console.WriteLine();
                   //  Console.WriteLine(i.UserId.ToUpper().Contains(major.MajorId.Trim()));
                 });
-                cbStudentID.DataSource = studentAddLists;
+                cbStudentID.DataSource = studentAddLists;*/
             }
 
 
@@ -114,22 +115,27 @@ namespace std_Management
 
         }
 
-        private void btn_updateUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbClassID_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AddStudentClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_DeleteUserClass_Click(object sender, EventArgs e)
         {
 
         }

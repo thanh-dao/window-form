@@ -86,7 +86,6 @@
             this.lbClassID.Size = new System.Drawing.Size(70, 21);
             this.lbClassID.TabIndex = 61;
             this.lbClassID.Text = "Class ID:";
-            this.lbClassID.Click += new System.EventHandler(this.lbClassID_Click);
             // 
             // txtClassName
             // 
@@ -108,7 +107,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(624, 94);
+            this.label1.Location = new System.Drawing.Point(624, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 65;
@@ -119,7 +118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(603, 137);
+            this.label4.Location = new System.Drawing.Point(614, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 21);
             this.label4.TabIndex = 68;
@@ -129,7 +128,7 @@
             // cbStudentID
             // 
             this.cbStudentID.FormattingEnabled = true;
-            this.cbStudentID.Location = new System.Drawing.Point(740, 137);
+            this.cbStudentID.Location = new System.Drawing.Point(740, 135);
             this.cbStudentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbStudentID.Name = "cbStudentID";
             this.cbStudentID.Size = new System.Drawing.Size(288, 23);
@@ -174,6 +173,7 @@
             this.btn_DeleteUserClass.TabIndex = 75;
             this.btn_DeleteUserClass.Text = "Remove";
             this.btn_DeleteUserClass.UseVisualStyleBackColor = false;
+            this.btn_DeleteUserClass.Click += new System.EventHandler(this.btn_DeleteUserClass_Click);
             // 
             // btnUpdateUser
             // 
@@ -186,6 +186,7 @@
             this.btnUpdateUser.TabIndex = 74;
             this.btnUpdateUser.Text = "Update";
             this.btnUpdateUser.UseVisualStyleBackColor = false;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
             // btn_AddStudentClass
             // 
@@ -198,7 +199,7 @@
             this.btn_AddStudentClass.TabIndex = 73;
             this.btn_AddStudentClass.Text = "Add";
             this.btn_AddStudentClass.UseVisualStyleBackColor = false;
-            this.btn_AddStudentClass.Click += new System.EventHandler(this.btn_updateUser_Click);
+            this.btn_AddStudentClass.Click += new System.EventHandler(this.btn_AddStudentClass_Click);
             // 
             // dataGridView1
             // 
