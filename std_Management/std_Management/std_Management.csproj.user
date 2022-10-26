@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="AddNewClass_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddNewStudent_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddSubject_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ClassList_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ClassUpdateMark_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DefineClass_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MarkManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StdSubjectList_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentList_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentMain_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentProfile_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SubjectList_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TeacherListClass_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TeacherListSubject_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TeacherMain_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TeacherProfile_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UpdateRemoveStudent_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UpdateRemoveSubject_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
