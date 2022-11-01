@@ -73,9 +73,18 @@ namespace Student_Management
             }
 
             var classStudent = new RepositoryBase<ClassStudent>();
-            var check = classStudent.GetAll().Where(p => p.StudentId.Equals(dtg_studentList.CurrentRow.Cells[0].Value.ToString())).Count();
+            var check_1 = classStudent.GetAll().Where(p => p.StudentId.Equals(dtg_studentList.CurrentRow.Cells[0].Value.ToString())).Count();
 
-            if (check != 0)
+            if (check_1 != 0)
+            {
+                updateRemoveStdF.btn_deleteUser.Enabled = false;
+            }
+
+
+            var SubjectTeacher = new RepositoryBase<SubjectTeacher>();
+            var check_2 = SubjectTeacher.GetAll().Where(p => p.TeacherId.Equals(dtg_studentList.CurrentRow.Cells[0].Value.ToString())).Count();
+
+            if (check_2 != 0)
             {
                 updateRemoveStdF.btn_deleteUser.Enabled = false;
             }
