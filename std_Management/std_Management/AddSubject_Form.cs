@@ -36,13 +36,6 @@ namespace std_Management
                 return false;
             }
 
-            if (nudNumOfCredits.Value > 0 || nudNumOfCredits.Value < 100)
-            {
-                MessageBox.Show("Number of credits must be between 1-99.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                nudNumOfCredits.Focus();
-                return false;
-            }
-
             else
             {
                 return true;
@@ -57,9 +50,9 @@ namespace std_Management
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-                if (MessageBox.Show("Do you want to exit?", "Message", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    this.Close();
+            if (MessageBox.Show("Do you want to exit?", "Message", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Close();
             }
         }
 
@@ -74,13 +67,23 @@ namespace std_Management
 
             string _SubjectId = txtSubjectID.Text;
             string _SujectName = txtSubjectName.Text;
-            int _NumOfCredits = (int)nudNumOfCredits.Value;
 
+
+
+            int _NumOfCredits = (int)nudNumOfCredits.Value;
+            if (nudNumOfCredits.Value > 0 && nudNumOfCredits.Value < 100)
+            {
+                _NumOfCredits = (int)nudNumOfCredits.Value;
+            }
+            else
+            {
+                MessageBox.Show("Number of credits must be between 1-99.", "Notification", MessageBoxButtons.OK);
+                return;
+            }
 
             var CheckId = repo.GetAll().Where(p => p.SubjectId.Trim().Equals(_SubjectId.Trim())).FirstOrDefault();
             if (CheckId != null)
             {
-                Console.WriteLine(repo.Get(txtSubjectID.Text));
                 MessageBox.Show("Id " + txtSubjectID.Text + " already exits", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSubjectID.Focus();
                 return;

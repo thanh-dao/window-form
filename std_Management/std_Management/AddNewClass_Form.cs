@@ -19,6 +19,34 @@ namespace std_Management
             updateForm();
         }
 
+        public bool relative()
+        {
+            var classSubject = new RepositoryBase<ClassSubject>();
+            var classStudent = new RepositoryBase<ClassStudent>();
+            var check_1 = classSubject.GetAll().Where(p => p.ClassId.Trim().ToLower().Equals(txtClassId.Text.ToLower().Trim())).Count();
+            var check_2 = classStudent.GetAll().Where(p => p.ClassId.Trim().ToLower().Equals(txtClassId.Text.ToLower().Trim())).Count();
+            Console.WriteLine(check_1);
+            if (!(check_1 == 0))
+            {
+                MessageBox.Show("Can not delete (class subject)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtClassId.Focus();
+                return false;
+            }
+
+            if (!(check_2 == 0))
+            {
+                MessageBox.Show("Can not delete (class student)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtClassName.Focus();
+                return false;
+            }
+
+
+            else
+            {
+                return true;
+            }
+        }
+
         public bool checkObject()
         {
 
@@ -35,7 +63,6 @@ namespace std_Management
                 txtClassName.Focus();
                 return false;
             }
-
 
             else
             {
@@ -59,11 +86,17 @@ namespace std_Management
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             updateForm();
+            txtClassId.Enabled = true;
+            txtClassId.Text = "";
+            txtClassName.Text = "";
+            nudNumOfStudent.Value = 0;
+
         }
 
         private void dtgAddNewClass_DoubleClick(object sender, EventArgs e)
         {
             txtClassId.Text = dtgAddNewClass.CurrentRow.Cells[0].Value.ToString();
+            txtClassId.Enabled = false;
             txtClassName.Text = dtgAddNewClass.CurrentRow.Cells[1].Value.ToString();
             nudNumOfStudent.Value = Decimal.Parse(dtgAddNewClass.CurrentRow.Cells[2].Value.ToString());
 
@@ -91,17 +124,30 @@ namespace std_Management
             int _NumOfStudent = (int)nudNumOfStudent.Value;
 
             var CheckId = repo.GetAll().Where(p => p.ClassId.Trim().Equals(_ClassId.Trim())).FirstOrDefault();
+
+            var classStudent = new RepositoryBase<ClassStudent>();
+            var checkNumberStudent = classStudent.GetAll().Where(p => p.ClassId.Trim().ToLower().Equals(txtClassId.Text.ToLower().Trim())).Count();
+
             if (CheckId != null)
             {
-                CheckId.ClassId = _ClassId;
-                CheckId.ClassName = _ClassName;
-                CheckId.NumberOfStudent = _NumOfStudent;
-                repo.Update(CheckId);
+                if (checkNumberStudent < _NumOfStudent)
+                {
+                    CheckId.ClassId = _ClassId;
+                    CheckId.ClassName = _ClassName;
+                    CheckId.NumberOfStudent = _NumOfStudent;
+                    repo.Update(CheckId);
 
+                    MessageBox.Show("Update class Successfully.", "Notification", MessageBoxButtons.OK);
+                    updateForm();
+                    clearForm();
+                }
 
-                MessageBox.Show("Update class Successfully.", "Notification", MessageBoxButtons.OK);
-                updateForm();
-                clearForm();
+                else
+                {
+                    MessageBox.Show("Update class Unsuccessfully (Number input < Number student in class).", "Notification", MessageBoxButtons.OK);
+                    updateForm();
+                    clearForm();
+                }
             }
             else
             {
@@ -121,17 +167,21 @@ namespace std_Management
 
             if (obj != null)
             {
-                DialogResult dialogResult = MessageBox.Show("Do you want to Delete ", "Delete Item", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (relative())
                 {
-                    repo.Delete(obj);
-                    updateForm();
-                    clearForm();
+                    DialogResult dialogResult = MessageBox.Show("Do you want to Delete ", "Delete Item", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        repo.Delete(obj);
+                        updateForm();
+                        clearForm();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //do nothing
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do nothing
-                }
+
             }
         }
 

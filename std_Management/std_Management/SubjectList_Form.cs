@@ -44,8 +44,24 @@ namespace std_Management
         {
             UpdateRemoveSubject_Form UpdateRemoveSubject = new UpdateRemoveSubject_Form();
             UpdateRemoveSubject.txtSubjectID.Text = dtgSujectList.CurrentRow.Cells[0].Value.ToString();
+            UpdateRemoveSubject.txtSubjectID.Enabled = false;
             UpdateRemoveSubject.txtSubjectName.Text = dtgSujectList.CurrentRow.Cells[1].Value.ToString();
             UpdateRemoveSubject.nudNumOfCredits.Value = Decimal.Parse(dtgSujectList.CurrentRow.Cells[2].Value.ToString());
+
+
+            var MajorSubject = new RepositoryBase<MajorSubject>();
+            var SubjectTeacher = new RepositoryBase<SubjectTeacher>();
+            var check_1 = MajorSubject.GetAll().Where(p => p.SubjectId.Trim().ToLower().Equals(dtgSujectList.CurrentRow.Cells[0].Value.ToString().ToLower().Trim())).Count();
+            var check_2 = SubjectTeacher.GetAll().Where(p => p.SubjectId.Trim().ToLower().Equals(dtgSujectList.CurrentRow.Cells[0].Value.ToString().ToLower().Trim())).Count();
+            if (!(check_1 == 0))
+            {
+                UpdateRemoveSubject.btnRemoveSubject.Enabled = false;
+            }
+
+            if (!(check_2 == 0))
+            {
+                UpdateRemoveSubject.btnRemoveSubject.Enabled = false;
+            }
 
             UpdateRemoveSubject.Show();
         }
